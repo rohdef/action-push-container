@@ -1,0 +1,16 @@
+{
+  "name": "action-push-container",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/action-push-container",
+    "packages/action-push-container-test",
+    "packages_imported/kotlin-node/20.14.10-pre.804"
+  ],
+  "overrides": {},
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
