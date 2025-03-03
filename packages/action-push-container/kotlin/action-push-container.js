@@ -788,7 +788,10 @@
   function Companion_2() {
   }
   protoOf(Companion_2).e23 = function (value) {
-    var strategy = valueOf(value);
+    // Inline function 'kotlin.text.uppercase' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$1 = value.toUpperCase();
+    var strategy = valueOf(tmp$ret$1);
     return _AutoTagging___init__impl__eihvgt(strategy);
   };
   var Companion_instance_2;
