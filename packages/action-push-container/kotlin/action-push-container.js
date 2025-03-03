@@ -56,7 +56,7 @@
   initMetadataForLambda(Core$run$slambda, CoroutineImpl, VOID, [1]);
   initMetadataForLambda(Core$group$lambda$slambda, CoroutineImpl, VOID, [1]);
   initMetadataForClass(Core_0, 'Core', VOID, VOID, VOID, [2]);
-  initMetadataForClass(InputNames, 'InputNames', VOID, Enum);
+  initMetadataForClass(InputName, 'InputName', VOID, Enum);
   initMetadataForCompanion(Companion);
   initMetadataForCompanion(Companion_0);
   initMetadataForCompanion(Companion_1);
@@ -744,45 +744,45 @@
   protoOf(Core_0).d22 = function (message) {
     return Core.error(message);
   };
-  var InputNames_IMAGE_ID_instance;
-  var InputNames_DESTINATION_HOSTS_instance;
-  var InputNames_DESTINATION_IMAGE_NAMES_instance;
-  var InputNames_AUTO_TAGGING_instance;
-  var InputNames_DESTINATION_TAGS_instance;
-  var InputNames_entriesInitialized;
-  function InputNames_initEntries() {
-    if (InputNames_entriesInitialized)
+  var InputName_IMAGE_ID_instance;
+  var InputName_DESTINATION_HOSTS_instance;
+  var InputName_DESTINATION_IMAGE_NAMES_instance;
+  var InputName_AUTO_TAGGING_instance;
+  var InputName_DESTINATION_TAGS_instance;
+  var InputName_entriesInitialized;
+  function InputName_initEntries() {
+    if (InputName_entriesInitialized)
       return Unit_instance;
-    InputNames_entriesInitialized = true;
-    InputNames_IMAGE_ID_instance = new InputNames('IMAGE_ID', 0, 'image-id');
-    InputNames_DESTINATION_HOSTS_instance = new InputNames('DESTINATION_HOSTS', 1, 'destination-hosts');
-    InputNames_DESTINATION_IMAGE_NAMES_instance = new InputNames('DESTINATION_IMAGE_NAMES', 2, 'destination-image-names');
-    InputNames_AUTO_TAGGING_instance = new InputNames('AUTO_TAGGING', 3, 'auto-tagging');
-    InputNames_DESTINATION_TAGS_instance = new InputNames('DESTINATION_TAGS', 4, 'destination-tags');
+    InputName_entriesInitialized = true;
+    InputName_IMAGE_ID_instance = new InputName('IMAGE_ID', 0, 'image-id');
+    InputName_DESTINATION_HOSTS_instance = new InputName('DESTINATION_HOSTS', 1, 'destination-hosts');
+    InputName_DESTINATION_IMAGE_NAMES_instance = new InputName('DESTINATION_IMAGE_NAMES', 2, 'destination-image-names');
+    InputName_AUTO_TAGGING_instance = new InputName('AUTO_TAGGING', 3, 'auto-tagging');
+    InputName_DESTINATION_TAGS_instance = new InputName('DESTINATION_TAGS', 4, 'destination-tags');
   }
-  function InputNames(name, ordinal, actionName) {
+  function InputName(name, ordinal, actionName) {
     Enum.call(this, name, ordinal);
     this.h23_1 = actionName;
   }
-  function InputNames_IMAGE_ID_getInstance() {
-    InputNames_initEntries();
-    return InputNames_IMAGE_ID_instance;
+  function InputName_IMAGE_ID_getInstance() {
+    InputName_initEntries();
+    return InputName_IMAGE_ID_instance;
   }
-  function InputNames_DESTINATION_HOSTS_getInstance() {
-    InputNames_initEntries();
-    return InputNames_DESTINATION_HOSTS_instance;
+  function InputName_DESTINATION_HOSTS_getInstance() {
+    InputName_initEntries();
+    return InputName_DESTINATION_HOSTS_instance;
   }
-  function InputNames_DESTINATION_IMAGE_NAMES_getInstance() {
-    InputNames_initEntries();
-    return InputNames_DESTINATION_IMAGE_NAMES_instance;
+  function InputName_DESTINATION_IMAGE_NAMES_getInstance() {
+    InputName_initEntries();
+    return InputName_DESTINATION_IMAGE_NAMES_instance;
   }
-  function InputNames_AUTO_TAGGING_getInstance() {
-    InputNames_initEntries();
-    return InputNames_AUTO_TAGGING_instance;
+  function InputName_AUTO_TAGGING_getInstance() {
+    InputName_initEntries();
+    return InputName_AUTO_TAGGING_instance;
   }
-  function InputNames_DESTINATION_TAGS_getInstance() {
-    InputNames_initEntries();
-    return InputNames_DESTINATION_TAGS_instance;
+  function InputName_DESTINATION_TAGS_getInstance() {
+    InputName_initEntries();
+    return InputName_DESTINATION_TAGS_instance;
   }
   function _ImageId___init__impl__dvdkrh(value) {
     return value;
@@ -953,7 +953,7 @@
   function Companion_4() {
   }
   protoOf(Companion_4).t23 = function (getInput) {
-    return new Inputs(Companion_instance.y23(getInput(InputNames_IMAGE_ID_getInstance())), Companion_instance_0.z23(getInput(InputNames_DESTINATION_HOSTS_getInstance())), Companion_instance_1.a24(getInput(InputNames_DESTINATION_IMAGE_NAMES_getInstance())), Companion_instance_2.b24(getInput(InputNames_AUTO_TAGGING_getInstance())), Companion_instance_3.c24(getInput(InputNames_DESTINATION_TAGS_getInstance())));
+    return new Inputs(Companion_instance.y23(getInput(InputName_IMAGE_ID_getInstance())), Companion_instance_0.z23(getInput(InputName_DESTINATION_HOSTS_getInstance())), Companion_instance_1.a24(getInput(InputName_DESTINATION_IMAGE_NAMES_getInstance())), Companion_instance_2.b24(getInput(InputName_AUTO_TAGGING_getInstance())), Companion_instance_3.c24(getInput(InputName_DESTINATION_TAGS_getInstance())));
   };
   var Companion_instance_4;
   function Companion_getInstance_5() {
