@@ -29,6 +29,7 @@
   var isInterface = kotlin_kotlin.$_$.n8;
   var GlobalScope_instance = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
   var promise = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.e;
+  var Enum = kotlin_kotlin.$_$.wa;
   var initMetadataForCompanion = kotlin_kotlin.$_$.a8;
   var getStringHashCode = kotlin_kotlin.$_$.x7;
   var Companion_getInstance = kotlin_com_charleskorn_kaml_kaml.$_$.a;
@@ -43,9 +44,7 @@
   var toString = kotlin_kotlin.$_$.y8;
   var hashCode = kotlin_kotlin.$_$.y7;
   var THROW_IAE = kotlin_kotlin.$_$.hb;
-  var Enum = kotlin_kotlin.$_$.wa;
   var equals = kotlin_kotlin.$_$.t7;
-  var initMetadataForObject = kotlin_kotlin.$_$.e8;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(ActionEnvironment, 'ActionEnvironment');
@@ -57,6 +56,7 @@
   initMetadataForLambda(Core$run$slambda, CoroutineImpl, VOID, [1]);
   initMetadataForLambda(Core$group$lambda$slambda, CoroutineImpl, VOID, [1]);
   initMetadataForClass(Core_0, 'Core', VOID, VOID, VOID, [2]);
+  initMetadataForClass(InputNames, 'InputNames', VOID, Enum);
   initMetadataForCompanion(Companion);
   initMetadataForCompanion(Companion_0);
   initMetadataForCompanion(Companion_1);
@@ -65,7 +65,7 @@
   initMetadataForCompanion(Companion_3);
   initMetadataForCompanion(Companion_4);
   initMetadataForClass(Inputs, 'Inputs');
-  initMetadataForObject(InputNames, 'InputNames');
+  initMetadataForClass(OutputName, 'OutputName', VOID, Enum);
   //endregion
   function actionInfo(_this__u8e3s4, $completion) {
     var tmp = new $actionInfoCOROUTINE$0(_this__u8e3s4, $completion);
@@ -396,6 +396,7 @@
               this.x21_1.e(element_1);
             }
 
+            var tmp_10 = OutputName_IMAGES_PUSHED_getInstance();
             var this_2 = this.x21_1;
             var destination_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_2, 10));
             var _iterator__ex2g4s_2 = this_2.h();
@@ -404,11 +405,11 @@
               destination_1.e('- ' + item_0);
             }
 
-            this.d21_1.f22('imagesP  ushed', joinToString(destination_1, '\n'));
+            this.d21_1.f22(tmp_10, joinToString(destination_1, '\n'));
             this.b8_1 = 7;
-            var tmp_10 = Exec;
+            var tmp_11 = Exec;
             var this_3 = ['inspect', '--format', '{{index .RepoDigests 0}}', _ImageId___get_value__impl__k780on(this.d21_1.x1z_1.y21_1)];
-            suspendResult = await_0(tmp_10.getExecOutput('docker', this_3), this);
+            suspendResult = await_0(tmp_11.getExecOutput('docker', this_3), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -419,7 +420,7 @@
             if (imageDigestOutput.exitCode === 0) {
               var digest = imageDigestOutput.stdout;
               this.d21_1.u20('Digest: [' + digest + ']');
-              this.d21_1.f22('digest', digest);
+              this.d21_1.f22(OutputName_DIGEST_getInstance(), digest);
             } else {
               this.d21_1.e22('Could not get docker image digest');
             }
@@ -625,16 +626,12 @@
       return $it;
     };
   }
-  function Core$getInput$ref($boundThis) {
-    var l = function (p0) {
-      return $boundThis.getInput(p0);
-    };
-    l.callableName = 'getInput';
-    return l;
+  function Core$inputs$lambda(it) {
+    return Core.getInput(it.h23_1);
   }
   function Core$group$lambda$slambda($contents, this$0, resultContinuation) {
-    this.n23_1 = $contents;
-    this.o23_1 = this$0;
+    this.q23_1 = $contents;
+    this.r23_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
   protoOf(Core$group$lambda$slambda).s22 = function ($this$promise, $completion) {
@@ -655,7 +652,7 @@
           case 0:
             this.c8_1 = 2;
             this.b8_1 = 1;
-            suspendResult = this.n23_1(this.o23_1, this);
+            suspendResult = this.q23_1(this.r23_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -678,8 +675,8 @@
      while (true);
   };
   protoOf(Core$group$lambda$slambda).t22 = function ($this$promise, completion) {
-    var i = new Core$group$lambda$slambda(this.n23_1, this.o23_1, completion);
-    i.p23_1 = $this$promise;
+    var i = new Core$group$lambda$slambda(this.q23_1, this.r23_1, completion);
+    i.s23_1 = $this$promise;
     return i;
   };
   function Core$group$lambda$slambda_0($contents, this$0, resultContinuation) {
@@ -699,9 +696,9 @@
   function Core_0() {
     var tmp = this;
     var tmp_0 = Companion_instance_4;
-    tmp.x1z_1 = tmp_0.q23(Core$getInput$ref(Core));
+    tmp.x1z_1 = tmp_0.t23(Core$inputs$lambda);
   }
-  protoOf(Core_0).r23 = function (main, post, $completion) {
+  protoOf(Core_0).u23 = function (main, post, $completion) {
     var tmp = actionsToolkit;
     var tmp_0 = Core$run$lambda(main, this);
     var tmp_1;
@@ -726,14 +723,14 @@
   };
   protoOf(Core_0).y1z = function (main, post, $completion, $super) {
     post = post === VOID ? null : post;
-    return $super === VOID ? this.r23(main, post, $completion) : $super.r23.call(this, main, post, $completion);
+    return $super === VOID ? this.u23(main, post, $completion) : $super.u23.call(this, main, post, $completion);
   };
   protoOf(Core_0).g22 = function (name, contents, $completion) {
     var tmp = Core;
     return await_0(tmp.group(name, Core$group$lambda(contents, this)), $completion);
   };
   protoOf(Core_0).f22 = function (name, value) {
-    return Core.setOutput(name, value);
+    return Core.setOutput(name.x23_1, value);
   };
   protoOf(Core_0).e22 = function (message) {
     return Core.setFailed(message);
@@ -747,6 +744,46 @@
   protoOf(Core_0).d22 = function (message) {
     return Core.error(message);
   };
+  var InputNames_IMAGE_ID_instance;
+  var InputNames_DESTINATION_HOSTS_instance;
+  var InputNames_DESTINATION_IMAGE_NAMES_instance;
+  var InputNames_AUTO_TAGGING_instance;
+  var InputNames_DESTINATION_TAGS_instance;
+  var InputNames_entriesInitialized;
+  function InputNames_initEntries() {
+    if (InputNames_entriesInitialized)
+      return Unit_instance;
+    InputNames_entriesInitialized = true;
+    InputNames_IMAGE_ID_instance = new InputNames('IMAGE_ID', 0, 'image-id');
+    InputNames_DESTINATION_HOSTS_instance = new InputNames('DESTINATION_HOSTS', 1, 'destination-hosts');
+    InputNames_DESTINATION_IMAGE_NAMES_instance = new InputNames('DESTINATION_IMAGE_NAMES', 2, 'destination-image-names');
+    InputNames_AUTO_TAGGING_instance = new InputNames('AUTO_TAGGING', 3, 'auto-tagging');
+    InputNames_DESTINATION_TAGS_instance = new InputNames('DESTINATION_TAGS', 4, 'destination-tags');
+  }
+  function InputNames(name, ordinal, actionName) {
+    Enum.call(this, name, ordinal);
+    this.h23_1 = actionName;
+  }
+  function InputNames_IMAGE_ID_getInstance() {
+    InputNames_initEntries();
+    return InputNames_IMAGE_ID_instance;
+  }
+  function InputNames_DESTINATION_HOSTS_getInstance() {
+    InputNames_initEntries();
+    return InputNames_DESTINATION_HOSTS_instance;
+  }
+  function InputNames_DESTINATION_IMAGE_NAMES_getInstance() {
+    InputNames_initEntries();
+    return InputNames_DESTINATION_IMAGE_NAMES_instance;
+  }
+  function InputNames_AUTO_TAGGING_getInstance() {
+    InputNames_initEntries();
+    return InputNames_AUTO_TAGGING_instance;
+  }
+  function InputNames_DESTINATION_TAGS_getInstance() {
+    InputNames_initEntries();
+    return InputNames_DESTINATION_TAGS_instance;
+  }
   function _ImageId___init__impl__dvdkrh(value) {
     return value;
   }
@@ -755,7 +792,7 @@
   }
   function Companion() {
   }
-  protoOf(Companion).s23 = function (value) {
+  protoOf(Companion).y23 = function (value) {
     return _ImageId___init__impl__dvdkrh(value);
   };
   var Companion_instance;
@@ -776,7 +813,7 @@
   }
   function Companion_0() {
   }
-  protoOf(Companion_0).t23 = function (value) {
+  protoOf(Companion_0).z23 = function (value) {
     // Inline function 'kotlinx.serialization.decodeFromString' call
     var this_0 = Companion_getInstance().t1o_1;
     // Inline function 'kotlinx.serialization.serializer' call
@@ -805,7 +842,7 @@
   }
   function Companion_1() {
   }
-  protoOf(Companion_1).u23 = function (value) {
+  protoOf(Companion_1).a24 = function (value) {
     // Inline function 'kotlinx.serialization.decodeFromString' call
     var this_0 = Companion_getInstance().t1o_1;
     // Inline function 'kotlinx.serialization.serializer' call
@@ -856,7 +893,7 @@
   }
   function Companion_2() {
   }
-  protoOf(Companion_2).v23 = function (value) {
+  protoOf(Companion_2).b24 = function (value) {
     // Inline function 'kotlin.text.uppercase' call
     // Inline function 'kotlin.js.asDynamic' call
     var tmp$ret$1 = value.toUpperCase();
@@ -892,7 +929,7 @@
   }
   function Companion_3() {
   }
-  protoOf(Companion_3).w23 = function (value) {
+  protoOf(Companion_3).c24 = function (value) {
     // Inline function 'kotlinx.serialization.decodeFromString' call
     var this_0 = Companion_getInstance().t1o_1;
     // Inline function 'kotlinx.serialization.serializer' call
@@ -915,8 +952,8 @@
   }
   function Companion_4() {
   }
-  protoOf(Companion_4).q23 = function (getInput) {
-    return new Inputs(Companion_instance.s23(getInput(InputNames_instance.x23_1)), Companion_instance_0.t23(getInput(InputNames_instance.y23_1)), Companion_instance_1.u23(getInput(InputNames_instance.z23_1)), Companion_instance_2.v23(getInput(InputNames_instance.a24_1)), Companion_instance_3.w23(getInput(InputNames_instance.b24_1)));
+  protoOf(Companion_4).t23 = function (getInput) {
+    return new Inputs(Companion_instance.y23(getInput(InputNames_IMAGE_ID_getInstance())), Companion_instance_0.z23(getInput(InputNames_DESTINATION_HOSTS_getInstance())), Companion_instance_1.a24(getInput(InputNames_DESTINATION_IMAGE_NAMES_getInstance())), Companion_instance_2.b24(getInput(InputNames_AUTO_TAGGING_getInstance())), Companion_instance_3.c24(getInput(InputNames_DESTINATION_TAGS_getInstance())));
   };
   var Companion_instance_4;
   function Companion_getInstance_5() {
@@ -958,16 +995,27 @@
       return false;
     return true;
   };
-  function InputNames() {
-    this.x23_1 = 'imageid';
-    this.y23_1 = 'destinationHosts';
-    this.z23_1 = 'destinationImageNames';
-    this.a24_1 = 'autoTagging';
-    this.b24_1 = 'destinationTags';
+  var OutputName_DIGEST_instance;
+  var OutputName_IMAGES_PUSHED_instance;
+  var OutputName_entriesInitialized;
+  function OutputName_initEntries() {
+    if (OutputName_entriesInitialized)
+      return Unit_instance;
+    OutputName_entriesInitialized = true;
+    OutputName_DIGEST_instance = new OutputName('DIGEST', 0, 'digest');
+    OutputName_IMAGES_PUSHED_instance = new OutputName('IMAGES_PUSHED', 1, 'images-pushed');
   }
-  var InputNames_instance;
-  function InputNames_getInstance() {
-    return InputNames_instance;
+  function OutputName(name, ordinal, actionName) {
+    Enum.call(this, name, ordinal);
+    this.x23_1 = actionName;
+  }
+  function OutputName_DIGEST_getInstance() {
+    OutputName_initEntries();
+    return OutputName_DIGEST_instance;
+  }
+  function OutputName_IMAGES_PUSHED_getInstance() {
+    OutputName_initEntries();
+    return OutputName_IMAGES_PUSHED_instance;
   }
   //region block: init
   Companion_instance = new Companion();
@@ -976,7 +1024,6 @@
   Companion_instance_2 = new Companion_2();
   Companion_instance_3 = new Companion_3();
   Companion_instance_4 = new Companion_4();
-  InputNames_instance = new InputNames();
   //endregion
   mainWrapper();
   return _;
