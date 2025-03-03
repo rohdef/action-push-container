@@ -1,11 +1,11 @@
 {
   "version": "9",
   "items": {
-    "2b81f950c862b3f76a0dcf1eda5d7c14": {
-      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/2.1.0/fd28fb7924ae2c52bc9a665118b38ffcbcd545f6/kotlin-stdlib-js-2.1.0.klib"
+    "1923267fd7761c155bba2ccca7099aa8": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/2.1.10/7c8de979c7f8588ea08c33a94a91e5c0b448726e/kotlin-stdlib-js-2.1.10.klib"
     },
     "da2498cb322f3066e609531d5c6babd6": {
-      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-dom-api-compat/2.1.0/40b26bd1544634256a38fa11cd8b9c0afbc82d01/kotlin-dom-api-compat-2.1.0.klib"
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-dom-api-compat/2.1.10/40b26bd1544634256a38fa11cd8b9c0afbc82d01/kotlin-dom-api-compat-2.1.10.klib"
     },
     "6a79752c9aac10c1ecd68a1f1b50fe71": {
       "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-node-js/20.14.10-pre.804/3575be23c773dfe5bb8f9398ce65f93066f0e3e5/kotlin-node-js-20.14.10-pre.804.klib",
@@ -34,6 +34,24 @@
     },
     "cf2a20a8533655194bae6cf99b80b659": {
       "src": "/home/runner/.gradle/caches/modules-2/files-2.1/io.github.turansky.seskar/seskar-react-js/3.20.0/bed0abf9575df043b699c15682461fe5c5375e6a/seskar-react-js-3.20.0.klib"
+    },
+    "42f05d85f10267ae8c780fb4bac28f2c": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-json-js/1.8.0/8a2d869e76ce981aada9ac85caef17c2ed3b5e02/kotlinx-serialization-json-js-1.8.0.klib"
+    },
+    "0e4b86de8aa74e249712c7ba13e98e68": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-core-js/1.8.0/ae6df61da8e0a1f5d77b39d4f0efa6fb24779564/kotlinx-serialization-core-js-1.8.0.klib"
+    },
+    "89469d2a921909986980b836cce47c4b": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/com.charleskorn.kaml/kaml-js/0.72.0/656824d119c080d7f9e4fb0f90baf3464269edaf/kaml-js-0.72.0.klib"
+    },
+    "d646527b0e524f140892a04b84968e2b": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/it.krzeminski/snakeyaml-engine-kmp-js/3.1.1/355313af2c63c5ac71202b239a35de387abf7062/snakeyaml-engine-kmp-js-3.1.1.klib"
+    },
+    "33f467cb954377318d34ef0581795298": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-js/3.10.2/13223068eca60d479447c0cdb18ccac524b985e9/okio-js-3.10.2.klib"
+    },
+    "89c4a69181c8fd291384ae7fc9778ff0": {
+      "src": "/home/runner/.gradle/caches/modules-2/files-2.1/net.thauvin.erik.urlencoder/urlencoder-lib-js/1.6.0/477bc0f99c432092e4be357f06bf07111ef669c0/urlencoder-lib-js-1.6.0.klib"
     }
   }
 }
