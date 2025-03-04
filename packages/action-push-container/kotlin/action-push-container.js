@@ -368,7 +368,7 @@
             var tmp_6 = this;
             tmp_6.r22_1 = this.q22_1;
             this.s22_1 = this.r22_1;
-            this.h22_1.y21('\tPusing images with tags to [' + this.s22_1 + ']');
+            this.h22_1.y21('\tTagging image IDs for host: [' + this.s22_1 + ']');
             var tmp_7 = this;
             tmp_7.t22_1 = this.l22_1;
             this.u22_1 = this.t22_1;
