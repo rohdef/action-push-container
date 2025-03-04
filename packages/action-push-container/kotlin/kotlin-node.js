@@ -1,7 +1,7 @@
 (function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var VOID = kotlin_kotlin.$_$.f;
+  var VOID = kotlin_kotlin.$_$.g;
   //endregion
   //region block: pre-declaration
   //endregion

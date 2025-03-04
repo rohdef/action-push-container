@@ -1,11 +1,11 @@
 (function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.w8;
-  var initMetadataForObject = kotlin_kotlin.$_$.f8;
-  var VOID = kotlin_kotlin.$_$.f;
-  var initMetadataForClass = kotlin_kotlin.$_$.a8;
-  var toString = kotlin_kotlin.$_$.dc;
+  var protoOf = kotlin_kotlin.$_$.x8;
+  var initMetadataForObject = kotlin_kotlin.$_$.g8;
+  var VOID = kotlin_kotlin.$_$.g;
+  var initMetadataForClass = kotlin_kotlin.$_$.b8;
+  var toString = kotlin_kotlin.$_$.ec;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(atomicfu$TraceBase, 'TraceBase');
@@ -37,10 +37,10 @@
   function AtomicRef(value) {
     this.kotlinx$atomicfu$value = value;
   }
-  protoOf(AtomicRef).jj = function (_set____db54di) {
+  protoOf(AtomicRef).gj = function (_set____db54di) {
     this.kotlinx$atomicfu$value = _set____db54di;
   };
-  protoOf(AtomicRef).kj = function () {
+  protoOf(AtomicRef).hj = function () {
     return this.kotlinx$atomicfu$value;
   };
   protoOf(AtomicRef).atomicfu$compareAndSet = function (expect, update) {
@@ -63,10 +63,10 @@
   function AtomicBoolean(value) {
     this.kotlinx$atomicfu$value = value;
   }
-  protoOf(AtomicBoolean).lj = function (_set____db54di) {
+  protoOf(AtomicBoolean).ij = function (_set____db54di) {
     this.kotlinx$atomicfu$value = _set____db54di;
   };
-  protoOf(AtomicBoolean).kj = function () {
+  protoOf(AtomicBoolean).hj = function () {
     return this.kotlinx$atomicfu$value;
   };
   protoOf(AtomicBoolean).atomicfu$compareAndSet = function (expect, update) {
@@ -89,10 +89,10 @@
   function AtomicInt(value) {
     this.kotlinx$atomicfu$value = value;
   }
-  protoOf(AtomicInt).mj = function (_set____db54di) {
+  protoOf(AtomicInt).jj = function (_set____db54di) {
     this.kotlinx$atomicfu$value = _set____db54di;
   };
-  protoOf(AtomicInt).kj = function () {
+  protoOf(AtomicInt).hj = function () {
     return this.kotlinx$atomicfu$value;
   };
   protoOf(AtomicInt).atomicfu$compareAndSet = function (expect, update) {
