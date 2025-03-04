@@ -6,45 +6,46 @@
   var imul = Math.imul;
   var Unit_instance = kotlin_kotlin.$_$.y3;
   var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.i1;
-  var protoOf = kotlin_kotlin.$_$.v8;
-  var initMetadataForClass = kotlin_kotlin.$_$.z7;
+  var protoOf = kotlin_kotlin.$_$.w8;
+  var initMetadataForClass = kotlin_kotlin.$_$.a8;
   var VOID = kotlin_kotlin.$_$.f;
   var CoroutineImpl = kotlin_kotlin.$_$.e7;
-  var THROW_CCE = kotlin_kotlin.$_$.gb;
+  var THROW_CCE = kotlin_kotlin.$_$.hb;
   var await_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
   var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.o6;
-  var Exception = kotlin_kotlin.$_$.ya;
-  var initMetadataForLambda = kotlin_kotlin.$_$.d8;
+  var Exception = kotlin_kotlin.$_$.za;
+  var initMetadataForLambda = kotlin_kotlin.$_$.e8;
   var emptyList = kotlin_kotlin.$_$.i5;
-  var noWhenBranchMatchedException = kotlin_kotlin.$_$.zb;
+  var noWhenBranchMatchedException = kotlin_kotlin.$_$.ac;
   var plus = kotlin_kotlin.$_$.w5;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.k;
   var collectionSizeOrDefault = kotlin_kotlin.$_$.r4;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.j;
   var addAll = kotlin_kotlin.$_$.m4;
   var joinToString = kotlin_kotlin.$_$.q5;
-  var initMetadataForCoroutine = kotlin_kotlin.$_$.b8;
+  var initMetadataForCoroutine = kotlin_kotlin.$_$.c8;
   var get_EmptyContinuation = kotlin_kotlin.$_$.s6;
   var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
-  var isInterface = kotlin_kotlin.$_$.n8;
+  var isInterface = kotlin_kotlin.$_$.o8;
   var GlobalScope_instance = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
   var promise = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.e;
-  var Enum = kotlin_kotlin.$_$.wa;
-  var initMetadataForCompanion = kotlin_kotlin.$_$.a8;
-  var getStringHashCode = kotlin_kotlin.$_$.x7;
+  var Enum = kotlin_kotlin.$_$.xa;
+  var println = kotlin_kotlin.$_$.i7;
+  var initMetadataForCompanion = kotlin_kotlin.$_$.b8;
+  var getStringHashCode = kotlin_kotlin.$_$.y7;
   var Companion_getInstance = kotlin_com_charleskorn_kaml_kaml.$_$.a;
   var KtList = kotlin_kotlin.$_$.f4;
   var getKClass = kotlin_kotlin.$_$.e;
   var PrimitiveClasses_getInstance = kotlin_kotlin.$_$.o3;
-  var arrayOf = kotlin_kotlin.$_$.ub;
+  var arrayOf = kotlin_kotlin.$_$.vb;
   var createKType = kotlin_kotlin.$_$.b;
   var createInvariantKTypeProjection = kotlin_kotlin.$_$.a;
   var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m1;
   var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.k1;
-  var toString = kotlin_kotlin.$_$.y8;
-  var hashCode = kotlin_kotlin.$_$.y7;
-  var THROW_IAE = kotlin_kotlin.$_$.hb;
-  var equals = kotlin_kotlin.$_$.t7;
+  var toString = kotlin_kotlin.$_$.z8;
+  var hashCode = kotlin_kotlin.$_$.z7;
+  var THROW_IAE = kotlin_kotlin.$_$.ib;
+  var equals = kotlin_kotlin.$_$.u7;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(ActionEnvironment, 'ActionEnvironment');
@@ -69,26 +70,26 @@
   //endregion
   function actionInfo(_this__u8e3s4, $completion) {
     var tmp = new $actionInfoCOROUTINE$0(_this__u8e3s4, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   }
   function ActionEnvironment(process) {
-    this.k1z_1 = process;
-    this.l1z_1 = 'GITHUB_ACTOR';
-    this.m1z_1 = 'GITHUB_SHA';
-    this.n1z_1 = 'GITHUB_REPOSITORY';
-    this.o1z_1 = 'GITHUB_RUN_ID';
-    this.p1z_1 = 'GITHUB_SERVER_URL';
-    this.q1z_1 = this.w1z(this.k1z_1, this.l1z_1);
-    this.r1z_1 = this.w1z(this.k1z_1, this.m1z_1);
-    this.s1z_1 = this.w1z(this.k1z_1, this.n1z_1);
-    this.t1z_1 = this.w1z(this.k1z_1, this.o1z_1);
-    this.u1z_1 = this.w1z(this.k1z_1, this.p1z_1);
-    this.v1z_1 = this.u1z_1 + '/' + this.s1z_1;
+    this.q1z_1 = process;
+    this.r1z_1 = 'GITHUB_ACTOR';
+    this.s1z_1 = 'GITHUB_SHA';
+    this.t1z_1 = 'GITHUB_REPOSITORY';
+    this.u1z_1 = 'GITHUB_RUN_ID';
+    this.v1z_1 = 'GITHUB_SERVER_URL';
+    this.w1z_1 = this.c20(this.q1z_1, this.r1z_1);
+    this.x1z_1 = this.c20(this.q1z_1, this.s1z_1);
+    this.y1z_1 = this.c20(this.q1z_1, this.t1z_1);
+    this.z1z_1 = this.c20(this.q1z_1, this.u1z_1);
+    this.a20_1 = this.c20(this.q1z_1, this.v1z_1);
+    this.b20_1 = this.a20_1 + '/' + this.y1z_1;
   }
-  protoOf(ActionEnvironment).w1z = function (_this__u8e3s4, key) {
-    var tmp0_elvis_lhs = this.k1z_1.env[key];
+  protoOf(ActionEnvironment).c20 = function (_this__u8e3s4, key) {
+    var tmp0_elvis_lhs = this.q1z_1.env[key];
     var tmp;
     if (tmp0_elvis_lhs == null) {
       throw IllegalArgumentException_init_$Create$(key + ' environment variable is not set');
@@ -99,30 +100,30 @@
   };
   function main($completion) {
     var tmp = new Core_0();
-    return tmp.y1z(main$slambda_0(null), VOID, $completion);
+    return tmp.e20(main$slambda_0(null), VOID, $completion);
   }
   function actionInfo$slambda(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(actionInfo$slambda).i20 = function ($this$group, $completion) {
-    var tmp = this.j20($this$group, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(actionInfo$slambda).o20 = function ($this$group, $completion) {
+    var tmp = this.p20($this$group, $completion);
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   };
-  protoOf(actionInfo$slambda).t8 = function (p1, $completion) {
-    return this.i20(p1 instanceof Core_0 ? p1 : THROW_CCE(), $completion);
+  protoOf(actionInfo$slambda).a9 = function (p1, $completion) {
+    return this.o20(p1 instanceof Core_0 ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(actionInfo$slambda).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(actionInfo$slambda).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 3;
-            this.c8_1 = 2;
-            this.b8_1 = 1;
+            this.j8_1 = 3;
+            this.j8_1 = 2;
+            this.i8_1 = 1;
             suspendResult = await_0(GitHub.printActionsRuntimeTokenACs(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -130,48 +131,48 @@
 
             continue $sm;
           case 1:
-            this.c8_1 = 3;
-            this.b8_1 = 4;
+            this.j8_1 = 3;
+            this.i8_1 = 4;
             continue $sm;
           case 2:
-            this.c8_1 = 3;
-            var tmp_0 = this.e8_1;
+            this.j8_1 = 3;
+            var tmp_0 = this.l8_1;
             if (tmp_0 instanceof Exception) {
-              var exception = this.e8_1;
+              var exception = this.l8_1;
               var tmp0_elvis_lhs = exception.message;
-              this.h20_1.k20(tmp0_elvis_lhs == null ? 'Could not print token ACs' : tmp0_elvis_lhs);
-              this.b8_1 = 4;
+              this.n20_1.q20(tmp0_elvis_lhs == null ? 'Could not print token ACs' : tmp0_elvis_lhs);
+              this.i8_1 = 4;
               continue $sm;
             } else {
-              throw this.e8_1;
+              throw this.l8_1;
             }
 
           case 3:
-            throw this.e8_1;
+            throw this.l8_1;
           case 4:
-            this.c8_1 = 3;
+            this.j8_1 = 3;
             return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 3) {
+        if (this.j8_1 === 3) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(actionInfo$slambda).j20 = function ($this$group, completion) {
+  protoOf(actionInfo$slambda).p20 = function ($this$group, completion) {
     var i = new actionInfo$slambda(completion);
-    i.h20_1 = $this$group;
+    i.n20_1 = $this$group;
     return i;
   };
   function actionInfo$slambda_0(resultContinuation) {
     var i = new actionInfo$slambda(resultContinuation);
     var l = function ($this$group, $completion) {
-      return i.i20($this$group, $completion);
+      return i.o20($this$group, $completion);
     };
     l.$arity = 1;
     return l;
@@ -179,25 +180,25 @@
   function actionInfo$slambda_1(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(actionInfo$slambda_1).i20 = function ($this$group, $completion) {
-    var tmp = this.j20($this$group, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(actionInfo$slambda_1).o20 = function ($this$group, $completion) {
+    var tmp = this.p20($this$group, $completion);
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   };
-  protoOf(actionInfo$slambda_1).t8 = function (p1, $completion) {
-    return this.i20(p1 instanceof Core_0 ? p1 : THROW_CCE(), $completion);
+  protoOf(actionInfo$slambda_1).a9 = function (p1, $completion) {
+    return this.o20(p1 instanceof Core_0 ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(actionInfo$slambda_1).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(actionInfo$slambda_1).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 4;
-            this.c8_1 = 3;
-            this.b8_1 = 1;
+            this.j8_1 = 4;
+            this.j8_1 = 3;
+            this.i8_1 = 1;
             suspendResult = await_0(Docker.printVersion(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -205,7 +206,7 @@
 
             continue $sm;
           case 1:
-            this.b8_1 = 2;
+            this.i8_1 = 2;
             suspendResult = await_0(Docker.printInfo(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -213,48 +214,48 @@
 
             continue $sm;
           case 2:
-            this.c8_1 = 4;
-            this.b8_1 = 5;
+            this.j8_1 = 4;
+            this.i8_1 = 5;
             continue $sm;
           case 3:
-            this.c8_1 = 4;
-            var tmp_0 = this.e8_1;
+            this.j8_1 = 4;
+            var tmp_0 = this.l8_1;
             if (tmp_0 instanceof Exception) {
-              var exception = this.e8_1;
+              var exception = this.l8_1;
               var tmp0_elvis_lhs = exception.message;
-              this.t20_1.u20(tmp0_elvis_lhs == null ? 'Could not get docker information' : tmp0_elvis_lhs);
-              this.b8_1 = 5;
+              this.z20_1.a21(tmp0_elvis_lhs == null ? 'Could not get docker information' : tmp0_elvis_lhs);
+              this.i8_1 = 5;
               continue $sm;
             } else {
-              throw this.e8_1;
+              throw this.l8_1;
             }
 
           case 4:
-            throw this.e8_1;
+            throw this.l8_1;
           case 5:
-            this.c8_1 = 4;
+            this.j8_1 = 4;
             return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 4) {
+        if (this.j8_1 === 4) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(actionInfo$slambda_1).j20 = function ($this$group, completion) {
+  protoOf(actionInfo$slambda_1).p20 = function ($this$group, completion) {
     var i = new actionInfo$slambda_1(completion);
-    i.t20_1 = $this$group;
+    i.z20_1 = $this$group;
     return i;
   };
   function actionInfo$slambda_2(resultContinuation) {
     var i = new actionInfo$slambda_1(resultContinuation);
     var l = function ($this$group, $completion) {
-      return i.i20($this$group, $completion);
+      return i.o20($this$group, $completion);
     };
     l.$arity = 1;
     return l;
@@ -262,36 +263,36 @@
   function main$slambda(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(main$slambda).i20 = function ($this$run, $completion) {
-    var tmp = this.j20($this$run, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(main$slambda).o20 = function ($this$run, $completion) {
+    var tmp = this.p20($this$run, $completion);
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   };
-  protoOf(main$slambda).t8 = function (p1, $completion) {
-    return this.i20(p1 instanceof Core_0 ? p1 : THROW_CCE(), $completion);
+  protoOf(main$slambda).a9 = function (p1, $completion) {
+    return this.o20(p1 instanceof Core_0 ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(main$slambda).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(main$slambda).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 8;
-            this.b8_1 = 1;
-            suspendResult = actionInfo(this.d21_1, this);
+            this.j8_1 = 8;
+            this.i8_1 = 1;
+            suspendResult = actionInfo(this.j21_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 1:
-            this.e21_1 = new ActionEnvironment(node_process_process_dcpv5o);
-            this.d21_1.u20('Starting push workflow with the following input:\n' + this.d21_1.x1z_1.toString());
+            this.k21_1 = new ActionEnvironment(node_process_process_dcpv5o);
+            this.j21_1.a21('Starting push workflow with the following input:\n' + this.j21_1.d20_1.toString());
             var tmp_0 = this;
             var tmp_1;
-            switch (_AutoTagging___get_strategy__impl__et9b2r(this.d21_1.x1z_1.b22_1).e2_1) {
+            switch (_AutoTagging___get_strategy__impl__et9b2r(this.j21_1.d20_1.h22_1).e2_1) {
               case 0:
                 tmp_1 = emptyList();
                 break;
@@ -303,15 +304,15 @@
                 break;
             }
 
-            tmp_0.f21_1 = tmp_1;
-            this.g21_1 = plus(this.f21_1, _DestinationTags___get_tags__impl__3v3frm(this.d21_1.x1z_1.c22_1));
+            tmp_0.l21_1 = tmp_1;
+            this.m21_1 = plus(this.l21_1, _DestinationTags___get_tags__impl__3v3frm(this.j21_1.d20_1.i22_1));
             var tmp_2 = this;
-            var tmp0 = _DestinationImageNames___get_names__impl__7h7cij(this.d21_1.x1z_1.a22_1);
+            var tmp0 = _DestinationImageNames___get_names__impl__7h7cij(this.j21_1.d20_1.g22_1);
             var destination = ArrayList_init_$Create$();
             var _iterator__ex2g4s = tmp0.h();
             while (_iterator__ex2g4s.i()) {
               var element = _iterator__ex2g4s.j();
-              var this_0 = this.g21_1;
+              var this_0 = this.m21_1;
               var destination_0 = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_0, 10));
               var _iterator__ex2g4s_0 = this_0.h();
               while (_iterator__ex2g4s_0.i()) {
@@ -322,47 +323,47 @@
               addAll(destination, list);
             }
 
-            tmp_2.h21_1 = destination;
-            this.d21_1.u20('The following images with tags will be pushed: ' + joinToString(this.h21_1, ', '));
+            tmp_2.n21_1 = destination;
+            this.j21_1.a21('The following images with tags will be pushed: ' + joinToString(this.n21_1, ', '));
             var tmp_3 = this;
-            tmp_3.i21_1 = ArrayList_init_$Create$();
+            tmp_3.o21_1 = ArrayList_init_$Create$();
             var tmp_4 = this;
-            tmp_4.j21_1 = _DestinationHosts___get_hosts__impl__2byyiq(this.d21_1.x1z_1.z21_1);
-            this.k21_1 = this.j21_1;
-            this.l21_1 = this.k21_1.h();
-            this.b8_1 = 2;
-            continue $sm;
-          case 2:
-            if (!this.l21_1.i()) {
-              this.b8_1 = 6;
-              continue $sm;
-            }
-
-            this.m21_1 = this.l21_1.j();
-            var tmp_5 = this;
-            tmp_5.n21_1 = this.m21_1;
-            this.o21_1 = this.n21_1;
-            this.d21_1.u20('\tPusing images with tags to [' + this.o21_1 + ']');
-            var tmp_6 = this;
-            tmp_6.p21_1 = this.h21_1;
+            tmp_4.p21_1 = _DestinationHosts___get_hosts__impl__2byyiq(this.j21_1.d20_1.f22_1);
             this.q21_1 = this.p21_1;
             this.r21_1 = this.q21_1.h();
-            this.b8_1 = 3;
+            this.i8_1 = 2;
             continue $sm;
-          case 3:
+          case 2:
             if (!this.r21_1.i()) {
-              this.b8_1 = 5;
+              this.i8_1 = 6;
               continue $sm;
             }
 
             this.s21_1 = this.r21_1.j();
-            var tmp_7 = this;
-            tmp_7.t21_1 = this.s21_1;
+            var tmp_5 = this;
+            tmp_5.t21_1 = this.s21_1;
             this.u21_1 = this.t21_1;
-            this.v21_1 = this.o21_1 + '/' + this.u21_1;
-            this.b8_1 = 4;
+            this.j21_1.a21('\tPusing images with tags to [' + this.u21_1 + ']');
+            var tmp_6 = this;
+            tmp_6.v21_1 = this.n21_1;
+            this.w21_1 = this.v21_1;
+            this.x21_1 = this.w21_1.h();
+            this.i8_1 = 3;
+            continue $sm;
+          case 3:
+            if (!this.x21_1.i()) {
+              this.i8_1 = 5;
+              continue $sm;
+            }
+
+            this.y21_1 = this.x21_1.j();
+            var tmp_7 = this;
+            tmp_7.z21_1 = this.y21_1;
+            this.a22_1 = this.z21_1;
+            this.b22_1 = this.u21_1 + '/' + this.a22_1;
+            this.i8_1 = 4;
             var tmp_8 = Exec;
-            var this_1 = ['tag', _ImageId___get_value__impl__k780on(this.d21_1.x1z_1.y21_1), this.v21_1];
+            var this_1 = ['tag', _ImageId___get_value__impl__k780on(this.j21_1.d20_1.e22_1), this.b22_1];
             suspendResult = await_0(tmp_8.getExecOutput('docker', this_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -370,34 +371,34 @@
 
             continue $sm;
           case 4:
-            this.w21_1 = suspendResult;
-            if (!(this.w21_1.exitCode === 0)) {
-              this.d21_1.d22('Could not add tag to image');
-              this.d21_1.d22('    image: ' + _ImageId___get_value__impl__k780on(this.d21_1.x1z_1.y21_1));
-              this.d21_1.d22('    tag: ' + this.v21_1);
-              this.d21_1.e22('Could not add tag [' + this.v21_1 + '] to image [' + _ImageId___get_value__impl__k780on(this.d21_1.x1z_1.y21_1) + "]'");
+            this.c22_1 = suspendResult;
+            if (!(this.c22_1.exitCode === 0)) {
+              this.j21_1.j22('Could not add tag to image');
+              this.j21_1.j22('    image: ' + _ImageId___get_value__impl__k780on(this.j21_1.d20_1.e22_1));
+              this.j21_1.j22('    tag: ' + this.b22_1);
+              this.j21_1.k22('Could not add tag [' + this.b22_1 + '] to image [' + _ImageId___get_value__impl__k780on(this.j21_1.d20_1.e22_1) + "]'");
             }
 
-            var tmp1 = this.i21_1;
-            var element_0 = this.v21_1;
+            var tmp1 = this.o21_1;
+            var element_0 = this.b22_1;
             tmp1.e(element_0);
-            this.b8_1 = 3;
+            this.i8_1 = 3;
             continue $sm;
           case 5:
-            this.b8_1 = 2;
+            this.i8_1 = 2;
             continue $sm;
           case 6:
             var tmp_9 = this;
-            tmp_9.x21_1 = ArrayList_init_$Create$();
-            var _iterator__ex2g4s_1 = this.i21_1.h();
+            tmp_9.d22_1 = ArrayList_init_$Create$();
+            var _iterator__ex2g4s_1 = this.o21_1.h();
             while (_iterator__ex2g4s_1.i()) {
               var element_1 = _iterator__ex2g4s_1.j();
-              this.d21_1.u20('docker push "' + element_1 + '" ');
-              this.x21_1.e(element_1);
+              this.j21_1.a21('docker push "' + element_1 + '" ');
+              this.d22_1.e(element_1);
             }
 
             var tmp_10 = OutputName_IMAGES_PUSHED_getInstance();
-            var this_2 = this.x21_1;
+            var this_2 = this.d22_1;
             var destination_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_2, 10));
             var _iterator__ex2g4s_2 = this_2.h();
             while (_iterator__ex2g4s_2.i()) {
@@ -405,10 +406,10 @@
               destination_1.e('- ' + item_0);
             }
 
-            this.d21_1.f22(tmp_10, joinToString(destination_1, '\n'));
-            this.b8_1 = 7;
+            this.j21_1.l22(tmp_10, joinToString(destination_1, '\n'));
+            this.i8_1 = 7;
             var tmp_11 = Exec;
-            var this_3 = ['inspect', '--format', '{{index .RepoDigests 0}}', _ImageId___get_value__impl__k780on(this.d21_1.x1z_1.y21_1)];
+            var this_3 = ['inspect', '--format', '{{index .RepoDigests 0}}', _ImageId___get_value__impl__k780on(this.j21_1.d20_1.e22_1)];
             suspendResult = await_0(tmp_11.getExecOutput('docker', this_3), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -419,62 +420,62 @@
             var imageDigestOutput = suspendResult;
             if (imageDigestOutput.exitCode === 0) {
               var digest = imageDigestOutput.stdout;
-              this.d21_1.u20('Digest: [' + digest + ']');
-              this.d21_1.f22(OutputName_DIGEST_getInstance(), digest);
+              this.j21_1.a21('Digest: [' + digest + ']');
+              this.j21_1.l22(OutputName_DIGEST_getInstance(), digest);
             } else {
-              this.d21_1.e22('Could not get docker image digest');
+              this.j21_1.k22('Could not get docker image digest');
             }
 
             return Unit_instance;
           case 8:
-            throw this.e8_1;
+            throw this.l8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 8) {
+        if (this.j8_1 === 8) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(main$slambda).j20 = function ($this$run, completion) {
+  protoOf(main$slambda).p20 = function ($this$run, completion) {
     var i = new main$slambda(completion);
-    i.d21_1 = $this$run;
+    i.j21_1 = $this$run;
     return i;
   };
   function main$slambda_0(resultContinuation) {
     var i = new main$slambda(resultContinuation);
     var l = function ($this$run, $completion) {
-      return i.i20($this$run, $completion);
+      return i.o20($this$run, $completion);
     };
     l.$arity = 1;
     return l;
   }
   function $actionInfoCOROUTINE$0(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
-    this.j1z_1 = _this__u8e3s4;
+    this.p1z_1 = _this__u8e3s4;
   }
-  protoOf($actionInfoCOROUTINE$0).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf($actionInfoCOROUTINE$0).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 3;
-            this.b8_1 = 1;
-            suspendResult = this.j1z_1.g22('GitHub Actions runtime token ACs', actionInfo$slambda_0(null), this);
+            this.j8_1 = 3;
+            this.i8_1 = 1;
+            suspendResult = this.p1z_1.m22('GitHub Actions runtime token ACs', actionInfo$slambda_0(null), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 1:
-            this.b8_1 = 2;
-            suspendResult = this.j1z_1.g22('Docker info', actionInfo$slambda_2(null), this);
+            this.i8_1 = 2;
+            suspendResult = this.p1z_1.m22('Docker info', actionInfo$slambda_2(null), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -483,15 +484,15 @@
           case 2:
             return Unit_instance;
           case 3:
-            throw this.e8_1;
+            throw this.l8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 3) {
+        if (this.j8_1 === 3) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
@@ -500,29 +501,29 @@
     main(get_EmptyContinuation());
   }
   function Core$run$lambda$slambda($main, this$0, resultContinuation) {
-    this.p22_1 = $main;
-    this.q22_1 = this$0;
+    this.v22_1 = $main;
+    this.w22_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(Core$run$lambda$slambda).s22 = function ($this$promise, $completion) {
-    var tmp = this.t22($this$promise, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(Core$run$lambda$slambda).y22 = function ($this$promise, $completion) {
+    var tmp = this.z22($this$promise, $completion);
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   };
-  protoOf(Core$run$lambda$slambda).t8 = function (p1, $completion) {
-    return this.s22((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(Core$run$lambda$slambda).a9 = function (p1, $completion) {
+    return this.y22((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(Core$run$lambda$slambda).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(Core$run$lambda$slambda).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 2;
-            this.b8_1 = 1;
-            suspendResult = this.p22_1(this.q22_1, this);
+            this.j8_1 = 2;
+            this.i8_1 = 1;
+            suspendResult = this.v22_1(this.w22_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -531,28 +532,28 @@
           case 1:
             return Unit_instance;
           case 2:
-            throw this.e8_1;
+            throw this.l8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 2) {
+        if (this.j8_1 === 2) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(Core$run$lambda$slambda).t22 = function ($this$promise, completion) {
-    var i = new Core$run$lambda$slambda(this.p22_1, this.q22_1, completion);
-    i.r22_1 = $this$promise;
+  protoOf(Core$run$lambda$slambda).z22 = function ($this$promise, completion) {
+    var i = new Core$run$lambda$slambda(this.v22_1, this.w22_1, completion);
+    i.x22_1 = $this$promise;
     return i;
   };
   function Core$run$lambda$slambda_0($main, this$0, resultContinuation) {
     var i = new Core$run$lambda$slambda($main, this$0, resultContinuation);
     var l = function ($this$promise, $completion) {
-      return i.s22($this$promise, $completion);
+      return i.y22($this$promise, $completion);
     };
     l.$arity = 1;
     return l;
@@ -564,29 +565,29 @@
     };
   }
   function Core$run$slambda($it, this$0, resultContinuation) {
-    this.c23_1 = $it;
-    this.d23_1 = this$0;
+    this.i23_1 = $it;
+    this.j23_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(Core$run$slambda).s22 = function ($this$promise, $completion) {
-    var tmp = this.t22($this$promise, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(Core$run$slambda).y22 = function ($this$promise, $completion) {
+    var tmp = this.z22($this$promise, $completion);
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   };
-  protoOf(Core$run$slambda).t8 = function (p1, $completion) {
-    return this.s22((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(Core$run$slambda).a9 = function (p1, $completion) {
+    return this.y22((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(Core$run$slambda).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(Core$run$slambda).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 2;
-            this.b8_1 = 1;
-            suspendResult = this.c23_1(this.d23_1, this);
+            this.j8_1 = 2;
+            this.i8_1 = 1;
+            suspendResult = this.i23_1(this.j23_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -595,28 +596,28 @@
           case 1:
             return Unit_instance;
           case 2:
-            throw this.e8_1;
+            throw this.l8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 2) {
+        if (this.j8_1 === 2) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(Core$run$slambda).t22 = function ($this$promise, completion) {
-    var i = new Core$run$slambda(this.c23_1, this.d23_1, completion);
-    i.e23_1 = $this$promise;
+  protoOf(Core$run$slambda).z22 = function ($this$promise, completion) {
+    var i = new Core$run$slambda(this.i23_1, this.j23_1, completion);
+    i.k23_1 = $this$promise;
     return i;
   };
   function Core$run$slambda_0($it, this$0, resultContinuation) {
     var i = new Core$run$slambda($it, this$0, resultContinuation);
     var l = function ($this$promise, $completion) {
-      return i.s22($this$promise, $completion);
+      return i.y22($this$promise, $completion);
     };
     l.$arity = 1;
     return l;
@@ -627,32 +628,32 @@
     };
   }
   function Core$inputs$lambda(it) {
-    return Core.getInput(it.h23_1);
+    return Core.getInput(it.n23_1);
   }
   function Core$group$lambda$slambda($contents, this$0, resultContinuation) {
-    this.q23_1 = $contents;
-    this.r23_1 = this$0;
+    this.w23_1 = $contents;
+    this.x23_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(Core$group$lambda$slambda).s22 = function ($this$promise, $completion) {
-    var tmp = this.t22($this$promise, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(Core$group$lambda$slambda).y22 = function ($this$promise, $completion) {
+    var tmp = this.z22($this$promise, $completion);
+    tmp.k8_1 = Unit_instance;
+    tmp.l8_1 = null;
+    return tmp.q8();
   };
-  protoOf(Core$group$lambda$slambda).t8 = function (p1, $completion) {
-    return this.s22((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(Core$group$lambda$slambda).a9 = function (p1, $completion) {
+    return this.y22((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(Core$group$lambda$slambda).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(Core$group$lambda$slambda).q8 = function () {
+    var suspendResult = this.k8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.i8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 2;
-            this.b8_1 = 1;
-            suspendResult = this.q23_1(this.r23_1, this);
+            this.j8_1 = 2;
+            this.i8_1 = 1;
+            suspendResult = this.w23_1(this.x23_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -661,28 +662,28 @@
           case 1:
             return Unit_instance;
           case 2:
-            throw this.e8_1;
+            throw this.l8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 2) {
+        if (this.j8_1 === 2) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.i8_1 = this.j8_1;
+          this.l8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(Core$group$lambda$slambda).t22 = function ($this$promise, completion) {
-    var i = new Core$group$lambda$slambda(this.q23_1, this.r23_1, completion);
-    i.s23_1 = $this$promise;
+  protoOf(Core$group$lambda$slambda).z22 = function ($this$promise, completion) {
+    var i = new Core$group$lambda$slambda(this.w23_1, this.x23_1, completion);
+    i.y23_1 = $this$promise;
     return i;
   };
   function Core$group$lambda$slambda_0($contents, this$0, resultContinuation) {
     var i = new Core$group$lambda$slambda($contents, this$0, resultContinuation);
     var l = function ($this$promise, $completion) {
-      return i.s22($this$promise, $completion);
+      return i.y22($this$promise, $completion);
     };
     l.$arity = 1;
     return l;
@@ -696,9 +697,9 @@
   function Core_0() {
     var tmp = this;
     var tmp_0 = Companion_instance_4;
-    tmp.x1z_1 = tmp_0.t23(Core$inputs$lambda);
+    tmp.d20_1 = tmp_0.z23(Core$inputs$lambda);
   }
-  protoOf(Core_0).u23 = function (main, post, $completion) {
+  protoOf(Core_0).a24 = function (main, post, $completion) {
     var tmp = actionsToolkit;
     var tmp_0 = Core$run$lambda(main, this);
     var tmp_1;
@@ -721,27 +722,27 @@
     }
     return tmp.run(tmp_0, tmp_3, $completion);
   };
-  protoOf(Core_0).y1z = function (main, post, $completion, $super) {
+  protoOf(Core_0).e20 = function (main, post, $completion, $super) {
     post = post === VOID ? null : post;
-    return $super === VOID ? this.u23(main, post, $completion) : $super.u23.call(this, main, post, $completion);
+    return $super === VOID ? this.a24(main, post, $completion) : $super.a24.call(this, main, post, $completion);
   };
-  protoOf(Core_0).g22 = function (name, contents, $completion) {
+  protoOf(Core_0).m22 = function (name, contents, $completion) {
     var tmp = Core;
     return await_0(tmp.group(name, Core$group$lambda(contents, this)), $completion);
   };
-  protoOf(Core_0).f22 = function (name, value) {
-    return Core.setOutput(name.x23_1, value);
+  protoOf(Core_0).l22 = function (name, value) {
+    return Core.setOutput(name.d24_1, value);
   };
-  protoOf(Core_0).e22 = function (message) {
+  protoOf(Core_0).k22 = function (message) {
     return Core.setFailed(message);
   };
-  protoOf(Core_0).u20 = function (message) {
+  protoOf(Core_0).a21 = function (message) {
     return Core.info(message);
   };
-  protoOf(Core_0).k20 = function (message) {
+  protoOf(Core_0).q20 = function (message) {
     return Core.warning(message);
   };
-  protoOf(Core_0).d22 = function (message) {
+  protoOf(Core_0).j22 = function (message) {
     return Core.error(message);
   };
   var InputName_IMAGE_ID_instance;
@@ -762,7 +763,7 @@
   }
   function InputName(name, ordinal, actionName) {
     Enum.call(this, name, ordinal);
-    this.h23_1 = actionName;
+    this.n23_1 = actionName;
   }
   function InputName_IMAGE_ID_getInstance() {
     InputName_initEntries();
@@ -792,7 +793,8 @@
   }
   function Companion() {
   }
-  protoOf(Companion).y23 = function (value) {
+  protoOf(Companion).e24 = function (value) {
+    println(value);
     return _ImageId___init__impl__dvdkrh(value);
   };
   var Companion_instance;
@@ -813,15 +815,16 @@
   }
   function Companion_0() {
   }
-  protoOf(Companion_0).z23 = function (value) {
+  protoOf(Companion_0).f24 = function (value) {
+    println(value);
     // Inline function 'kotlinx.serialization.decodeFromString' call
-    var this_0 = Companion_getInstance().t1o_1;
+    var this_0 = Companion_getInstance().z1o_1;
     // Inline function 'kotlinx.serialization.serializer' call
-    var this_1 = this_0.yw();
+    var this_1 = this_0.fx();
     // Inline function 'kotlinx.serialization.internal.cast' call
-    var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().qa(), arrayOf([]), false))]), false));
+    var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().xa(), arrayOf([]), false))]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
-    var hosts = this_0.w1o(tmp$ret$1, value);
+    var hosts = this_0.c1p(tmp$ret$1, value);
     return _DestinationHosts___init__impl__us4jj0(hosts);
   };
   var Companion_instance_0;
@@ -842,15 +845,16 @@
   }
   function Companion_1() {
   }
-  protoOf(Companion_1).a24 = function (value) {
+  protoOf(Companion_1).g24 = function (value) {
+    println(value);
     // Inline function 'kotlinx.serialization.decodeFromString' call
-    var this_0 = Companion_getInstance().t1o_1;
+    var this_0 = Companion_getInstance().z1o_1;
     // Inline function 'kotlinx.serialization.serializer' call
-    var this_1 = this_0.yw();
+    var this_1 = this_0.fx();
     // Inline function 'kotlinx.serialization.internal.cast' call
-    var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().qa(), arrayOf([]), false))]), false));
+    var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().xa(), arrayOf([]), false))]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
-    var names = this_0.w1o(tmp$ret$1, value);
+    var names = this_0.c1p(tmp$ret$1, value);
     return _DestinationImageNames___init__impl__tkt3vi(names);
   };
   var Companion_instance_1;
@@ -893,7 +897,8 @@
   }
   function Companion_2() {
   }
-  protoOf(Companion_2).b24 = function (value) {
+  protoOf(Companion_2).h24 = function (value) {
+    println(value);
     // Inline function 'kotlin.text.uppercase' call
     // Inline function 'kotlin.js.asDynamic' call
     var tmp$ret$1 = value.toUpperCase();
@@ -929,15 +934,16 @@
   }
   function Companion_3() {
   }
-  protoOf(Companion_3).c24 = function (value) {
+  protoOf(Companion_3).i24 = function (value) {
+    println(value);
     // Inline function 'kotlinx.serialization.decodeFromString' call
-    var this_0 = Companion_getInstance().t1o_1;
+    var this_0 = Companion_getInstance().z1o_1;
     // Inline function 'kotlinx.serialization.serializer' call
-    var this_1 = this_0.yw();
+    var this_1 = this_0.fx();
     // Inline function 'kotlinx.serialization.internal.cast' call
-    var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().qa(), arrayOf([]), false))]), false));
+    var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().xa(), arrayOf([]), false))]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
-    var tags = this_0.w1o(tmp$ret$1, value);
+    var tags = this_0.c1p(tmp$ret$1, value);
     return _DestinationTags___init__impl__pi708i(tags);
   };
   var Companion_instance_3;
@@ -952,29 +958,29 @@
   }
   function Companion_4() {
   }
-  protoOf(Companion_4).t23 = function (getInput) {
-    return new Inputs(Companion_instance.y23(getInput(InputName_IMAGE_ID_getInstance())), Companion_instance_0.z23(getInput(InputName_DESTINATION_HOSTS_getInstance())), Companion_instance_1.a24(getInput(InputName_DESTINATION_IMAGE_NAMES_getInstance())), Companion_instance_2.b24(getInput(InputName_AUTO_TAGGING_getInstance())), Companion_instance_3.c24(getInput(InputName_DESTINATION_TAGS_getInstance())));
+  protoOf(Companion_4).z23 = function (getInput) {
+    return new Inputs(Companion_instance.e24(getInput(InputName_IMAGE_ID_getInstance())), Companion_instance_0.f24(getInput(InputName_DESTINATION_HOSTS_getInstance())), Companion_instance_1.g24(getInput(InputName_DESTINATION_IMAGE_NAMES_getInstance())), Companion_instance_2.h24(getInput(InputName_AUTO_TAGGING_getInstance())), Companion_instance_3.i24(getInput(InputName_DESTINATION_TAGS_getInstance())));
   };
   var Companion_instance_4;
   function Companion_getInstance_5() {
     return Companion_instance_4;
   }
   function Inputs(imageId, destinationHosts, destinationImageNames, autoTagging, destinationTags) {
-    this.y21_1 = imageId;
-    this.z21_1 = destinationHosts;
-    this.a22_1 = destinationImageNames;
-    this.b22_1 = autoTagging;
-    this.c22_1 = destinationTags;
+    this.e22_1 = imageId;
+    this.f22_1 = destinationHosts;
+    this.g22_1 = destinationImageNames;
+    this.h22_1 = autoTagging;
+    this.i22_1 = destinationTags;
   }
   protoOf(Inputs).toString = function () {
-    return 'Inputs(imageId=' + ImageId__toString_impl_z02tf9(this.y21_1) + ', destinationHosts=' + DestinationHosts__toString_impl_pd5pt0(this.z21_1) + ', destinationImageNames=' + DestinationImageNames__toString_impl_n7y8h2(this.a22_1) + ', autoTagging=' + AutoTagging__toString_impl_i8zzqd(this.b22_1) + ', destinationTags=' + DestinationTags__toString_impl_dgmv46(this.c22_1) + ')';
+    return 'Inputs(imageId=' + ImageId__toString_impl_z02tf9(this.e22_1) + ', destinationHosts=' + DestinationHosts__toString_impl_pd5pt0(this.f22_1) + ', destinationImageNames=' + DestinationImageNames__toString_impl_n7y8h2(this.g22_1) + ', autoTagging=' + AutoTagging__toString_impl_i8zzqd(this.h22_1) + ', destinationTags=' + DestinationTags__toString_impl_dgmv46(this.i22_1) + ')';
   };
   protoOf(Inputs).hashCode = function () {
-    var result = ImageId__hashCode_impl_e9vbr0(this.y21_1);
-    result = imul(result, 31) + DestinationHosts__hashCode_impl_3lzt05(this.z21_1) | 0;
-    result = imul(result, 31) + DestinationImageNames__hashCode_impl_1gsbo7(this.a22_1) | 0;
-    result = imul(result, 31) + AutoTagging__hashCode_impl_v0y5fw(this.b22_1) | 0;
-    result = imul(result, 31) + DestinationTags__hashCode_impl_z7srx1(this.c22_1) | 0;
+    var result = ImageId__hashCode_impl_e9vbr0(this.e22_1);
+    result = imul(result, 31) + DestinationHosts__hashCode_impl_3lzt05(this.f22_1) | 0;
+    result = imul(result, 31) + DestinationImageNames__hashCode_impl_1gsbo7(this.g22_1) | 0;
+    result = imul(result, 31) + AutoTagging__hashCode_impl_v0y5fw(this.h22_1) | 0;
+    result = imul(result, 31) + DestinationTags__hashCode_impl_z7srx1(this.i22_1) | 0;
     return result;
   };
   protoOf(Inputs).equals = function (other) {
@@ -983,15 +989,15 @@
     if (!(other instanceof Inputs))
       return false;
     var tmp0_other_with_cast = other instanceof Inputs ? other : THROW_CCE();
-    if (!(this.y21_1 === tmp0_other_with_cast.y21_1))
+    if (!(this.e22_1 === tmp0_other_with_cast.e22_1))
       return false;
-    if (!equals(this.z21_1, tmp0_other_with_cast.z21_1))
+    if (!equals(this.f22_1, tmp0_other_with_cast.f22_1))
       return false;
-    if (!equals(this.a22_1, tmp0_other_with_cast.a22_1))
+    if (!equals(this.g22_1, tmp0_other_with_cast.g22_1))
       return false;
-    if (!equals(this.b22_1, tmp0_other_with_cast.b22_1))
+    if (!equals(this.h22_1, tmp0_other_with_cast.h22_1))
       return false;
-    if (!equals(this.c22_1, tmp0_other_with_cast.c22_1))
+    if (!equals(this.i22_1, tmp0_other_with_cast.i22_1))
       return false;
     return true;
   };
@@ -1007,7 +1013,7 @@
   }
   function OutputName(name, ordinal, actionName) {
     Enum.call(this, name, ordinal);
-    this.x23_1 = actionName;
+    this.d24_1 = actionName;
   }
   function OutputName_DIGEST_getInstance() {
     OutputName_initEntries();
