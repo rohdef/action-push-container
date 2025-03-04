@@ -6,20 +6,20 @@
         return instance && (typeof instance === 'object') && (instance.done === false)
     }
     }.prototype).constructor;
-  var protoOf = kotlin_kotlin.$_$.w8;
-  var initMetadataForClass = kotlin_kotlin.$_$.a8;
+  var protoOf = kotlin_kotlin.$_$.x8;
+  var initMetadataForClass = kotlin_kotlin.$_$.b8;
   var VOID = kotlin_kotlin.$_$.f;
-  var iterator = kotlin_kotlin.$_$.i9;
-  var CoroutineImpl = kotlin_kotlin.$_$.f7;
+  var iterator = kotlin_kotlin.$_$.j9;
+  var CoroutineImpl = kotlin_kotlin.$_$.g7;
   var Unit_instance = kotlin_kotlin.$_$.y3;
-  var THROW_CCE = kotlin_kotlin.$_$.ib;
-  var SequenceScope = kotlin_kotlin.$_$.h9;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.p6;
-  var initMetadataForLambda = kotlin_kotlin.$_$.e8;
-  var intercepted = kotlin_kotlin.$_$.r6;
+  var THROW_CCE = kotlin_kotlin.$_$.kb;
+  var SequenceScope = kotlin_kotlin.$_$.i9;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.q6;
+  var initMetadataForLambda = kotlin_kotlin.$_$.f8;
+  var intercepted = kotlin_kotlin.$_$.s6;
   var CancellableContinuationImpl = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
-  var resume = kotlin_kotlin.$_$.h7;
-  var resumeWithException = kotlin_kotlin.$_$.g7;
+  var resume = kotlin_kotlin.$_$.i7;
+  var resumeWithException = kotlin_kotlin.$_$.h7;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(AsyncIteratorAdapter, 'AsyncIteratorAdapter', VOID, VOID, VOID, [0]);
@@ -54,8 +54,8 @@
     return new AsyncIteratorAdapter(source);
   }
   function AsyncIteratorAdapter(source) {
-    this.bt_1 = source;
-    this.ct_1 = null;
+    this.du_1 = source;
+    this.eu_1 = null;
   }
   function iteratorFromJsIterable(source) {
     // Inline function 'js.iterable.JsIterator.iterator' call
@@ -66,79 +66,79 @@
     return iterator(iteratorFromJsIteratorLike$slambda_0(source, null));
   }
   function iteratorFromJsIteratorLike$slambda($source, resultContinuation) {
-    this.lt_1 = $source;
+    this.nu_1 = $source;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(iteratorFromJsIteratorLike$slambda).qt = function ($this$iterator, $completion) {
-    var tmp = this.rt($this$iterator, $completion);
-    tmp.d8_1 = Unit_instance;
-    tmp.e8_1 = null;
-    return tmp.j8();
+  protoOf(iteratorFromJsIteratorLike$slambda).su = function ($this$iterator, $completion) {
+    var tmp = this.tu($this$iterator, $completion);
+    tmp.j8_1 = Unit_instance;
+    tmp.k8_1 = null;
+    return tmp.p8();
   };
-  protoOf(iteratorFromJsIteratorLike$slambda).t8 = function (p1, $completion) {
-    return this.qt(p1 instanceof SequenceScope ? p1 : THROW_CCE(), $completion);
+  protoOf(iteratorFromJsIteratorLike$slambda).z8 = function (p1, $completion) {
+    return this.su(p1 instanceof SequenceScope ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(iteratorFromJsIteratorLike$slambda).j8 = function () {
-    var suspendResult = this.d8_1;
+  protoOf(iteratorFromJsIteratorLike$slambda).p8 = function () {
+    var suspendResult = this.j8_1;
     $sm: do
       try {
-        var tmp = this.b8_1;
+        var tmp = this.h8_1;
         switch (tmp) {
           case 0:
-            this.c8_1 = 5;
-            this.b8_1 = 1;
+            this.i8_1 = 5;
+            this.h8_1 = 1;
             continue $sm;
           case 1:
             var tmp_0 = this;
-            var tmp_1 = this.lt_1.next();
-            tmp_0.nt_1 = tmp_1 instanceof constructor ? tmp_1 : null;
-            if (this.nt_1 == null) {
-              this.b8_1 = 4;
+            var tmp_1 = this.nu_1.next();
+            tmp_0.pu_1 = tmp_1 instanceof constructor ? tmp_1 : null;
+            if (this.pu_1 == null) {
+              this.h8_1 = 4;
               var tmp_2 = this;
               continue $sm;
             } else {
-              this.ot_1 = this.nt_1;
-              this.b8_1 = 2;
+              this.qu_1 = this.pu_1;
+              this.h8_1 = 2;
               continue $sm;
             }
 
           case 2:
-            this.pt_1 = this.ot_1;
-            this.b8_1 = 3;
-            suspendResult = this.mt_1.de(this.pt_1.value, this);
+            this.ru_1 = this.qu_1;
+            this.h8_1 = 3;
+            suspendResult = this.ou_1.ye(this.ru_1.value, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 3:
-            this.b8_1 = 1;
+            this.h8_1 = 1;
             continue $sm;
           case 4:
             return Unit_instance;
           case 5:
-            throw this.e8_1;
+            throw this.k8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.c8_1 === 5) {
+        if (this.i8_1 === 5) {
           throw e;
         } else {
-          this.b8_1 = this.c8_1;
-          this.e8_1 = e;
+          this.h8_1 = this.i8_1;
+          this.k8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(iteratorFromJsIteratorLike$slambda).rt = function ($this$iterator, completion) {
-    var i = new iteratorFromJsIteratorLike$slambda(this.lt_1, completion);
-    i.mt_1 = $this$iterator;
+  protoOf(iteratorFromJsIteratorLike$slambda).tu = function ($this$iterator, completion) {
+    var i = new iteratorFromJsIteratorLike$slambda(this.nu_1, completion);
+    i.ou_1 = $this$iterator;
     return i;
   };
   function iteratorFromJsIteratorLike$slambda_0($source, resultContinuation) {
     var i = new iteratorFromJsIteratorLike$slambda($source, resultContinuation);
     var l = function ($this$iterator, $completion) {
-      return i.qt($this$iterator, $completion);
+      return i.su($this$iterator, $completion);
     };
     l.$arity = 1;
     return l;
@@ -164,10 +164,10 @@
   function awaitPromiseLike(promise, $completion) {
     // Inline function 'kotlinx.coroutines.suspendCancellableCoroutine.<anonymous>' call
     var cancellable = new CancellableContinuationImpl(intercepted($completion), 1);
-    cancellable.pm();
+    cancellable.rn();
     // Inline function 'js.promise.internal.awaitPromiseLike.stub_for_inlining' call
     thenToContinuation(promise, cancellable);
-    return cancellable.zm();
+    return cancellable.bo();
   }
   function thenToContinuation(promise, continuation) {
     var tmp = resume$ref(continuation);

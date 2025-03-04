@@ -2,36 +2,36 @@
   'use strict';
   //region block: imports
   var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.w1;
-  var protoOf = kotlin_kotlin.$_$.w8;
+  var protoOf = kotlin_kotlin.$_$.x8;
   var Char__toInt_impl_vasixd = kotlin_kotlin.$_$.z1;
-  var numberToChar = kotlin_kotlin.$_$.t8;
-  var initMetadataForObject = kotlin_kotlin.$_$.f8;
+  var numberToChar = kotlin_kotlin.$_$.u8;
+  var initMetadataForObject = kotlin_kotlin.$_$.g8;
   var Char__compareTo_impl_ypi4mb = kotlin_kotlin.$_$.x1;
   var Unit_instance = kotlin_kotlin.$_$.y3;
-  var get_indices = kotlin_kotlin.$_$.u9;
+  var get_indices = kotlin_kotlin.$_$.v9;
   var IndexOutOfBoundsException_init_$Create$ = kotlin_kotlin.$_$.o1;
-  var charSequenceLength = kotlin_kotlin.$_$.q7;
-  var charSequenceGet = kotlin_kotlin.$_$.p7;
-  var getOrNull = kotlin_kotlin.$_$.t9;
-  var isLowSurrogate = kotlin_kotlin.$_$.y9;
-  var Char = kotlin_kotlin.$_$.va;
-  var isHighSurrogate = kotlin_kotlin.$_$.x9;
-  var toCharArray = kotlin_kotlin.$_$.ia;
-  var booleanArray = kotlin_kotlin.$_$.l7;
+  var charSequenceLength = kotlin_kotlin.$_$.r7;
+  var charSequenceGet = kotlin_kotlin.$_$.q7;
+  var getOrNull = kotlin_kotlin.$_$.u9;
+  var isLowSurrogate = kotlin_kotlin.$_$.z9;
+  var Char = kotlin_kotlin.$_$.xa;
+  var isHighSurrogate = kotlin_kotlin.$_$.y9;
+  var toCharArray = kotlin_kotlin.$_$.ka;
+  var booleanArray = kotlin_kotlin.$_$.m7;
   var Char__plus_impl_qi7pgj = kotlin_kotlin.$_$.y1;
   var StringBuilder_init_$Create$ = kotlin_kotlin.$_$.a1;
-  var decodeToString = kotlin_kotlin.$_$.p9;
+  var decodeToString = kotlin_kotlin.$_$.q9;
   var toString = kotlin_kotlin.$_$.a2;
-  var toString_0 = kotlin_kotlin.$_$.z8;
+  var toString_0 = kotlin_kotlin.$_$.a9;
   var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.i1;
-  var toInt = kotlin_kotlin.$_$.la;
-  var toByte = kotlin_kotlin.$_$.x8;
+  var toInt = kotlin_kotlin.$_$.na;
+  var toByte = kotlin_kotlin.$_$.y8;
   var IllegalArgumentException_init_$Create$_0 = kotlin_kotlin.$_$.k1;
-  var NumberFormatException = kotlin_kotlin.$_$.eb;
-  var charArrayOf = kotlin_kotlin.$_$.n7;
-  var concatToString = kotlin_kotlin.$_$.l9;
-  var encodeToByteArray = kotlin_kotlin.$_$.s9;
-  var contains = kotlin_kotlin.$_$.n9;
+  var NumberFormatException = kotlin_kotlin.$_$.gb;
+  var charArrayOf = kotlin_kotlin.$_$.o7;
+  var concatToString = kotlin_kotlin.$_$.m9;
+  var encodeToByteArray = kotlin_kotlin.$_$.t9;
+  var contains = kotlin_kotlin.$_$.o9;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(Character, 'Character');
@@ -39,31 +39,31 @@
   //endregion
   function Character() {
     Character_instance = this;
-    this.j1a_1 = 1114111;
-    this.k1a_1 = 65536;
-    this.l1a_1 = -56613888;
-    this.m1a_1 = _Char___init__impl__6a9atx(55232);
+    this.l1b_1 = 1114111;
+    this.m1b_1 = 65536;
+    this.n1b_1 = -56613888;
+    this.o1b_1 = _Char___init__impl__6a9atx(55232);
   }
-  protoOf(Character).n1a = function (codePoint) {
+  protoOf(Character).p1b = function (codePoint) {
     return 65536 <= codePoint ? codePoint <= 1114111 : false;
   };
-  protoOf(Character).o1a = function (highSurrogate, lowSurrogate) {
+  protoOf(Character).q1b = function (highSurrogate, lowSurrogate) {
     // Inline function 'kotlin.code' call
     var tmp = Char__toInt_impl_vasixd(highSurrogate) << 10;
     // Inline function 'kotlin.code' call
     return (tmp + Char__toInt_impl_vasixd(lowSurrogate) | 0) + -56613888 | 0;
   };
-  protoOf(Character).p1a = function (codePoint) {
+  protoOf(Character).r1b = function (codePoint) {
     return (codePoint >>> 16 | 0) === 0;
   };
-  protoOf(Character).q1a = function (codePoint) {
+  protoOf(Character).s1b = function (codePoint) {
     var tmp = codePoint >>> 10 | 0;
     // Inline function 'kotlin.code' call
     var this_0 = _Char___init__impl__6a9atx(55232);
     var tmp$ret$0 = Char__toInt_impl_vasixd(this_0);
     return numberToChar(tmp + tmp$ret$0 | 0);
   };
-  protoOf(Character).r1a = function (codePoint) {
+  protoOf(Character).t1b = function (codePoint) {
     var tmp = codePoint & 1023;
     // Inline function 'kotlin.code' call
     var this_0 = _Char___init__impl__6a9atx(56320);
@@ -81,17 +81,17 @@
     if (Char__compareTo_impl_ypi4mb(_this__u8e3s4, _Char___init__impl__6a9atx(122)) <= 0) {
       // Inline function 'kotlin.code' call
       var tmp$ret$0 = Char__toInt_impl_vasixd(_this__u8e3s4);
-      tmp = $this.t1a_1[tmp$ret$0];
+      tmp = $this.v1b_1[tmp$ret$0];
     } else {
       tmp = false;
     }
     return tmp;
   }
   function appendEncodedDigit(_this__u8e3s4, $this, digit) {
-    _this__u8e3s4.o7($this.s1a_1[digit & 15]);
+    _this__u8e3s4.u7($this.u1b_1[digit & 15]);
   }
   function appendEncodedByte(_this__u8e3s4, $this, ch) {
-    _this__u8e3s4.n7('%');
+    _this__u8e3s4.t7('%');
     appendEncodedDigit(_this__u8e3s4, $this, ch >> 4);
     appendEncodedDigit(_this__u8e3s4, $this, ch);
   }
@@ -109,7 +109,7 @@
         tmp = isLowSurrogate(nextChar);
       }
       if (tmp === true) {
-        return Character_getInstance().o1a(firstChar, nextChar);
+        return Character_getInstance().q1b(firstChar, nextChar);
       }
     }
     // Inline function 'kotlin.code' call
@@ -117,7 +117,7 @@
   }
   function UrlEncoderUtil() {
     UrlEncoderUtil_instance = this;
-    this.s1a_1 = toCharArray('0123456789ABCDEF');
+    this.u1b_1 = toCharArray('0123456789ABCDEF');
     var tmp = this;
     // Inline function 'kotlin.code' call
     var this_0 = _Char___init__impl__6a9atx(122);
@@ -161,9 +161,9 @@
         this_1[Char__toInt_impl_vasixd(c_1)] = true;
       }
        while (inductionVariable_1 <= _Char___init__impl__6a9atx(122));
-    tmp.t1a_1 = this_1;
+    tmp.v1b_1 = this_1;
   }
-  protoOf(UrlEncoderUtil).u1a = function (source, plusToSpace) {
+  protoOf(UrlEncoderUtil).w1b = function (source, plusToSpace) {
     // Inline function 'kotlin.text.isEmpty' call
     if (charSequenceLength(source) === 0) {
       return source;
@@ -178,7 +178,7 @@
       var ch = charSequenceGet(source, i);
       if (ch === _Char___init__impl__6a9atx(37)) {
         if (!started) {
-          out.ab(source, 0, i);
+          out.gb(source, 0, i);
           started = true;
         }
         if (bytesBuffer == null) {
@@ -219,29 +219,29 @@
         }
       } else {
         if (!(bytesBuffer == null)) {
-          out.n7(decodeToString(bytesBuffer, 0, bytesPos));
+          out.t7(decodeToString(bytesBuffer, 0, bytesPos));
           started = true;
           bytesBuffer = null;
           bytesPos = 0;
         }
         if (plusToSpace && ch === _Char___init__impl__6a9atx(43)) {
           if (!started) {
-            out.ab(source, 0, i);
+            out.gb(source, 0, i);
             started = true;
           }
-          out.n7(' ');
+          out.t7(' ');
         } else if (started) {
-          out.o7(ch);
+          out.u7(ch);
         }
         i = i + 1 | 0;
       }
     }
     if (!(bytesBuffer == null)) {
-      out.n7(decodeToString(bytesBuffer, 0, bytesPos));
+      out.t7(decodeToString(bytesBuffer, 0, bytesPos));
     }
     return !started ? source : out.toString();
   };
-  protoOf(UrlEncoderUtil).v1a = function (source, allow, spaceToPlus) {
+  protoOf(UrlEncoderUtil).x1b = function (source, allow, spaceToPlus) {
     // Inline function 'kotlin.text.isEmpty' call
     if (charSequenceLength(source) === 0) {
       return source;
@@ -255,22 +255,22 @@
         if (tmp0_safe_receiver == null)
           null;
         else
-          tmp0_safe_receiver.o7(ch);
+          tmp0_safe_receiver.u7(ch);
         i = i + 1 | 0;
       } else {
         if (out == null) {
           out = StringBuilder_init_$Create$(source.length);
-          out.ab(source, 0, i);
+          out.gb(source, 0, i);
         }
         var cp = codePointAt(source, this, i);
         if (cp < 128) {
           if (spaceToPlus && ch === _Char___init__impl__6a9atx(32)) {
-            out.o7(_Char___init__impl__6a9atx(43));
+            out.u7(_Char___init__impl__6a9atx(43));
           } else {
             appendEncodedByte(out, this, cp);
           }
           i = i + 1 | 0;
-        } else if (Character_getInstance().p1a(cp)) {
+        } else if (Character_getInstance().r1b(cp)) {
           var indexedObject = encodeToByteArray(toString(ch));
           var inductionVariable = 0;
           var last = indexedObject.length;
@@ -280,9 +280,9 @@
             appendEncodedByte(out, this, b);
           }
           i = i + 1 | 0;
-        } else if (Character_getInstance().n1a(cp)) {
-          var high = Character_getInstance().q1a(cp);
-          var low = Character_getInstance().r1a(cp);
+        } else if (Character_getInstance().p1b(cp)) {
+          var high = Character_getInstance().s1b(cp);
+          var low = Character_getInstance().t1b(cp);
           // Inline function 'kotlin.charArrayOf' call
           var tmp$ret$1 = charArrayOf([high, low]);
           var indexedObject_0 = encodeToByteArray(concatToString(tmp$ret$1));
