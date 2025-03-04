@@ -6,20 +6,20 @@
         return instance && (typeof instance === 'object') && (instance.done === false)
     }
     }.prototype).constructor;
-  var protoOf = kotlin_kotlin.$_$.x8;
-  var initMetadataForClass = kotlin_kotlin.$_$.b8;
-  var VOID = kotlin_kotlin.$_$.g;
-  var iterator = kotlin_kotlin.$_$.j9;
-  var CoroutineImpl = kotlin_kotlin.$_$.g7;
-  var Unit_instance = kotlin_kotlin.$_$.z3;
-  var THROW_CCE = kotlin_kotlin.$_$.ib;
-  var SequenceScope = kotlin_kotlin.$_$.i9;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.q6;
-  var initMetadataForLambda = kotlin_kotlin.$_$.f8;
-  var intercepted = kotlin_kotlin.$_$.s6;
+  var protoOf = kotlin_kotlin.$_$.w8;
+  var initMetadataForClass = kotlin_kotlin.$_$.a8;
+  var VOID = kotlin_kotlin.$_$.f;
+  var iterator = kotlin_kotlin.$_$.i9;
+  var CoroutineImpl = kotlin_kotlin.$_$.f7;
+  var Unit_instance = kotlin_kotlin.$_$.y3;
+  var THROW_CCE = kotlin_kotlin.$_$.hb;
+  var SequenceScope = kotlin_kotlin.$_$.h9;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.p6;
+  var initMetadataForLambda = kotlin_kotlin.$_$.e8;
+  var intercepted = kotlin_kotlin.$_$.r6;
   var CancellableContinuationImpl = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
-  var resume = kotlin_kotlin.$_$.i7;
-  var resumeWithException = kotlin_kotlin.$_$.h7;
+  var resume = kotlin_kotlin.$_$.h7;
+  var resumeWithException = kotlin_kotlin.$_$.g7;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(AsyncIteratorAdapter, 'AsyncIteratorAdapter', VOID, VOID, VOID, [0]);
@@ -54,8 +54,8 @@
     return new AsyncIteratorAdapter(source);
   }
   function AsyncIteratorAdapter(source) {
-    this.ft_1 = source;
-    this.gt_1 = null;
+    this.bt_1 = source;
+    this.ct_1 = null;
   }
   function iteratorFromJsIterable(source) {
     // Inline function 'js.iterable.JsIterator.iterator' call
@@ -66,17 +66,17 @@
     return iterator(iteratorFromJsIteratorLike$slambda_0(source, null));
   }
   function iteratorFromJsIteratorLike$slambda($source, resultContinuation) {
-    this.pt_1 = $source;
+    this.lt_1 = $source;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(iteratorFromJsIteratorLike$slambda).ut = function ($this$iterator, $completion) {
-    var tmp = this.vt($this$iterator, $completion);
+  protoOf(iteratorFromJsIteratorLike$slambda).qt = function ($this$iterator, $completion) {
+    var tmp = this.rt($this$iterator, $completion);
     tmp.d8_1 = Unit_instance;
     tmp.e8_1 = null;
     return tmp.j8();
   };
   protoOf(iteratorFromJsIteratorLike$slambda).t8 = function (p1, $completion) {
-    return this.ut(p1 instanceof SequenceScope ? p1 : THROW_CCE(), $completion);
+    return this.qt(p1 instanceof SequenceScope ? p1 : THROW_CCE(), $completion);
   };
   protoOf(iteratorFromJsIteratorLike$slambda).j8 = function () {
     var suspendResult = this.d8_1;
@@ -90,22 +90,22 @@
             continue $sm;
           case 1:
             var tmp_0 = this;
-            var tmp_1 = this.pt_1.next();
-            tmp_0.rt_1 = tmp_1 instanceof constructor ? tmp_1 : null;
-            if (this.rt_1 == null) {
+            var tmp_1 = this.lt_1.next();
+            tmp_0.nt_1 = tmp_1 instanceof constructor ? tmp_1 : null;
+            if (this.nt_1 == null) {
               this.b8_1 = 4;
               var tmp_2 = this;
               continue $sm;
             } else {
-              this.st_1 = this.rt_1;
+              this.ot_1 = this.nt_1;
               this.b8_1 = 2;
               continue $sm;
             }
 
           case 2:
-            this.tt_1 = this.st_1;
+            this.pt_1 = this.ot_1;
             this.b8_1 = 3;
-            suspendResult = this.qt_1.he(this.tt_1.value, this);
+            suspendResult = this.mt_1.de(this.pt_1.value, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -130,15 +130,15 @@
       }
      while (true);
   };
-  protoOf(iteratorFromJsIteratorLike$slambda).vt = function ($this$iterator, completion) {
-    var i = new iteratorFromJsIteratorLike$slambda(this.pt_1, completion);
-    i.qt_1 = $this$iterator;
+  protoOf(iteratorFromJsIteratorLike$slambda).rt = function ($this$iterator, completion) {
+    var i = new iteratorFromJsIteratorLike$slambda(this.lt_1, completion);
+    i.mt_1 = $this$iterator;
     return i;
   };
   function iteratorFromJsIteratorLike$slambda_0($source, resultContinuation) {
     var i = new iteratorFromJsIteratorLike$slambda($source, resultContinuation);
     var l = function ($this$iterator, $completion) {
-      return i.ut($this$iterator, $completion);
+      return i.qt($this$iterator, $completion);
     };
     l.$arity = 1;
     return l;
@@ -164,10 +164,10 @@
   function awaitPromiseLike(promise, $completion) {
     // Inline function 'kotlinx.coroutines.suspendCancellableCoroutine.<anonymous>' call
     var cancellable = new CancellableContinuationImpl(intercepted($completion), 1);
-    cancellable.tm();
+    cancellable.pm();
     // Inline function 'js.promise.internal.awaitPromiseLike.stub_for_inlining' call
     thenToContinuation(promise, cancellable);
-    return cancellable.dn();
+    return cancellable.zm();
   }
   function thenToContinuation(promise, continuation) {
     var tmp = resume$ref(continuation);
