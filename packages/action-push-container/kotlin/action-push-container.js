@@ -292,7 +292,7 @@
         var tmp = this.h8_1;
         switch (tmp) {
           case 0:
-            this.i8_1 = 8;
+            this.i8_1 = 11;
             this.h8_1 = 1;
             suspendResult = actionInfo(this.h22_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -305,7 +305,7 @@
             this.h22_1.y21('Starting push workflow with the following input:\n' + this.h22_1.b21_1.toString());
             var tmp_0 = this;
             var tmp_1;
-            switch (_AutoTagging___get_strategy__impl__et9b2r(this.h22_1.b21_1.f23_1).g2_1) {
+            switch (_AutoTagging___get_strategy__impl__et9b2r(this.h22_1.b21_1.n23_1).g2_1) {
               case 0:
                 var referenceParts = split(this.i22_1.v20_1, ['/']);
                 var lastReferencePart = last(referenceParts);
@@ -330,9 +330,9 @@
             }
 
             tmp_0.j22_1 = tmp_1;
-            this.k22_1 = plus(this.j22_1, _DestinationTags___get_tags__impl__3v3frm(this.h22_1.b21_1.g23_1));
+            this.k22_1 = plus(this.j22_1, _DestinationTags___get_tags__impl__3v3frm(this.h22_1.b21_1.o23_1));
             var tmp_3 = this;
-            var tmp0 = _DestinationImageNames___get_names__impl__7h7cij(this.h22_1.b21_1.e23_1);
+            var tmp0 = _DestinationImageNames___get_names__impl__7h7cij(this.h22_1.b21_1.m23_1);
             var destination = ArrayList_init_$Create$();
             var _iterator__ex2g4s = tmp0.h();
             while (_iterator__ex2g4s.i()) {
@@ -353,7 +353,7 @@
             var tmp_4 = this;
             tmp_4.m22_1 = ArrayList_init_$Create$();
             var tmp_5 = this;
-            tmp_5.n22_1 = _DestinationHosts___get_hosts__impl__2byyiq(this.h22_1.b21_1.d23_1);
+            tmp_5.n22_1 = _DestinationHosts___get_hosts__impl__2byyiq(this.h22_1.b21_1.l23_1);
             this.o22_1 = this.n22_1;
             this.p22_1 = this.o22_1.h();
             this.h8_1 = 2;
@@ -388,7 +388,7 @@
             this.z22_1 = this.s22_1 + '/' + this.y22_1;
             this.h8_1 = 4;
             var tmp_9 = Exec;
-            var this_1 = ['tag', _ImageId___get_value__impl__k780on(this.h22_1.b21_1.c23_1), this.z22_1];
+            var this_1 = ['tag', _ImageId___get_value__impl__k780on(this.h22_1.b21_1.k23_1), this.z22_1];
             suspendResult = await_0(tmp_9.getExecOutput('docker', this_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -398,10 +398,10 @@
           case 4:
             this.a23_1 = suspendResult;
             if (!(this.a23_1.exitCode === 0)) {
-              this.h22_1.h23('Could not add tag to image');
-              this.h22_1.h23('    image: ' + _ImageId___get_value__impl__k780on(this.h22_1.b21_1.c23_1));
-              this.h22_1.h23('    tag: ' + this.z22_1);
-              this.h22_1.i23('Could not add tag [' + this.z22_1 + '] to image [' + _ImageId___get_value__impl__k780on(this.h22_1.b21_1.c23_1) + "]'");
+              this.h22_1.p23('Could not add tag to image');
+              this.h22_1.p23('    image: ' + _ImageId___get_value__impl__k780on(this.h22_1.b21_1.k23_1));
+              this.h22_1.p23('    tag: ' + this.z22_1);
+              this.h22_1.q23('Could not add tag [' + this.z22_1 + '] to image [' + _ImageId___get_value__impl__k780on(this.h22_1.b21_1.k23_1) + "]'");
             }
 
             var tmp1 = this.m22_1;
@@ -415,49 +415,88 @@
           case 6:
             var tmp_10 = this;
             tmp_10.b23_1 = ArrayList_init_$Create$();
-            var _iterator__ex2g4s_1 = this.m22_1.h();
-            while (_iterator__ex2g4s_1.i()) {
-              var element_1 = _iterator__ex2g4s_1.j();
-              this.h22_1.y21('docker push "' + element_1 + '" ');
-              this.b23_1.e(element_1);
-            }
-
-            var tmp_11 = OutputName_IMAGES_PUSHED_getInstance();
-            var this_2 = this.b23_1;
-            var destination_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_2, 10));
-            var _iterator__ex2g4s_2 = this_2.h();
-            while (_iterator__ex2g4s_2.i()) {
-              var item_0 = _iterator__ex2g4s_2.j();
-              destination_1.e('- ' + item_0);
-            }
-
-            this.h22_1.j23(tmp_11, joinToString(destination_1, '\n'));
+            var tmp_11 = this;
+            tmp_11.c23_1 = ArrayList_init_$Create$();
+            var tmp_12 = this;
+            tmp_12.d23_1 = this.m22_1;
+            this.e23_1 = this.d23_1;
+            this.f23_1 = this.e23_1.h();
             this.h8_1 = 7;
-            var tmp_12 = Exec;
-            var this_3 = ['inspect', '--format', '{{index .RepoDigests 0}}', _ImageId___get_value__impl__k780on(this.h22_1.b21_1.c23_1)];
-            suspendResult = await_0(tmp_12.getExecOutput('docker', this_3), this);
+            continue $sm;
+          case 7:
+            if (!this.f23_1.i()) {
+              this.h8_1 = 9;
+              continue $sm;
+            }
+
+            this.g23_1 = this.f23_1.j();
+            var tmp_13 = this;
+            tmp_13.h23_1 = this.g23_1;
+            this.i23_1 = this.h23_1;
+            this.h8_1 = 8;
+            var tmp_14 = Exec;
+            var this_2 = ['push', this.i23_1];
+            suspendResult = await_0(tmp_14.getExecOutput('docker', this_2), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
-          case 7:
+          case 8:
+            this.j23_1 = suspendResult;
+            if (this.j23_1.exitCode === 0) {
+              var tmp1_0 = this.c23_1;
+              var element_1 = this.i23_1;
+              tmp1_0.e(element_1);
+            } else {
+              var tmp3 = this.c23_1;
+              var element_2 = this.i23_1;
+              tmp3.e(element_2);
+            }
+
+            this.h8_1 = 7;
+            continue $sm;
+          case 9:
+            var tmp_15 = OutputName_IMAGES_PUSHED_getInstance();
+            var this_3 = this.c23_1;
+            var destination_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_3, 10));
+            var _iterator__ex2g4s_1 = this_3.h();
+            while (_iterator__ex2g4s_1.i()) {
+              var item_0 = _iterator__ex2g4s_1.j();
+              destination_1.e('- ' + item_0);
+            }
+
+            this.h22_1.r23(tmp_15, joinToString(destination_1, '\n'));
+            if (!this.b23_1.q()) {
+              this.h22_1.q23('Could not push all images IDs, failed IDs are: ' + joinToString(this.b23_1, '\n'));
+            }
+
+            this.h8_1 = 10;
+            var tmp_16 = Exec;
+            var this_4 = ['inspect', '--format', '{{index .RepoDigests 0}}', _ImageId___get_value__impl__k780on(this.h22_1.b21_1.k23_1)];
+            suspendResult = await_0(tmp_16.getExecOutput('docker', this_4), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 10:
             var imageDigestOutput = suspendResult;
             if (imageDigestOutput.exitCode === 0) {
               var digest = imageDigestOutput.stdout;
               this.h22_1.y21('Digest: [' + digest + ']');
-              this.h22_1.j23(OutputName_DIGEST_getInstance(), digest);
+              this.h22_1.r23(OutputName_DIGEST_getInstance(), digest);
             } else {
-              this.h22_1.i23('Could not get docker image digest');
+              this.h22_1.q23('Could not get docker image digest');
             }
 
             return Unit_instance;
-          case 8:
+          case 11:
             throw this.k8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.i8_1 === 8) {
+        if (this.i8_1 === 11) {
           throw e;
         } else {
           this.h8_1 = this.i8_1;
@@ -492,7 +531,7 @@
           case 0:
             this.i8_1 = 3;
             this.h8_1 = 1;
-            suspendResult = this.l20_1.k23('GitHub Actions runtime token ACs', actionInfo$slambda_0(null), this);
+            suspendResult = this.l20_1.s23('GitHub Actions runtime token ACs', actionInfo$slambda_0(null), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -500,7 +539,7 @@
             continue $sm;
           case 1:
             this.h8_1 = 2;
-            suspendResult = this.l20_1.k23('Docker info', actionInfo$slambda_2(null), this);
+            suspendResult = this.l20_1.s23('Docker info', actionInfo$slambda_2(null), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -526,18 +565,18 @@
     main(get_EmptyContinuation());
   }
   function Core$run$lambda$slambda($main, this$0, resultContinuation) {
-    this.t23_1 = $main;
-    this.u23_1 = this$0;
+    this.b24_1 = $main;
+    this.c24_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(Core$run$lambda$slambda).w23 = function ($this$promise, $completion) {
-    var tmp = this.x23($this$promise, $completion);
+  protoOf(Core$run$lambda$slambda).e24 = function ($this$promise, $completion) {
+    var tmp = this.f24($this$promise, $completion);
     tmp.j8_1 = Unit_instance;
     tmp.k8_1 = null;
     return tmp.p8();
   };
   protoOf(Core$run$lambda$slambda).z8 = function (p1, $completion) {
-    return this.w23((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+    return this.e24((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
   protoOf(Core$run$lambda$slambda).p8 = function () {
     var suspendResult = this.j8_1;
@@ -548,7 +587,7 @@
           case 0:
             this.i8_1 = 2;
             this.h8_1 = 1;
-            suspendResult = this.t23_1(this.u23_1, this);
+            suspendResult = this.b24_1(this.c24_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -570,15 +609,15 @@
       }
      while (true);
   };
-  protoOf(Core$run$lambda$slambda).x23 = function ($this$promise, completion) {
-    var i = new Core$run$lambda$slambda(this.t23_1, this.u23_1, completion);
-    i.v23_1 = $this$promise;
+  protoOf(Core$run$lambda$slambda).f24 = function ($this$promise, completion) {
+    var i = new Core$run$lambda$slambda(this.b24_1, this.c24_1, completion);
+    i.d24_1 = $this$promise;
     return i;
   };
   function Core$run$lambda$slambda_0($main, this$0, resultContinuation) {
     var i = new Core$run$lambda$slambda($main, this$0, resultContinuation);
     var l = function ($this$promise, $completion) {
-      return i.w23($this$promise, $completion);
+      return i.e24($this$promise, $completion);
     };
     l.$arity = 1;
     return l;
@@ -590,18 +629,18 @@
     };
   }
   function Core$run$slambda($it, this$0, resultContinuation) {
-    this.g24_1 = $it;
-    this.h24_1 = this$0;
+    this.o24_1 = $it;
+    this.p24_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(Core$run$slambda).w23 = function ($this$promise, $completion) {
-    var tmp = this.x23($this$promise, $completion);
+  protoOf(Core$run$slambda).e24 = function ($this$promise, $completion) {
+    var tmp = this.f24($this$promise, $completion);
     tmp.j8_1 = Unit_instance;
     tmp.k8_1 = null;
     return tmp.p8();
   };
   protoOf(Core$run$slambda).z8 = function (p1, $completion) {
-    return this.w23((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+    return this.e24((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
   protoOf(Core$run$slambda).p8 = function () {
     var suspendResult = this.j8_1;
@@ -612,7 +651,7 @@
           case 0:
             this.i8_1 = 2;
             this.h8_1 = 1;
-            suspendResult = this.g24_1(this.h24_1, this);
+            suspendResult = this.o24_1(this.p24_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -634,15 +673,15 @@
       }
      while (true);
   };
-  protoOf(Core$run$slambda).x23 = function ($this$promise, completion) {
-    var i = new Core$run$slambda(this.g24_1, this.h24_1, completion);
-    i.i24_1 = $this$promise;
+  protoOf(Core$run$slambda).f24 = function ($this$promise, completion) {
+    var i = new Core$run$slambda(this.o24_1, this.p24_1, completion);
+    i.q24_1 = $this$promise;
     return i;
   };
   function Core$run$slambda_0($it, this$0, resultContinuation) {
     var i = new Core$run$slambda($it, this$0, resultContinuation);
     var l = function ($this$promise, $completion) {
-      return i.w23($this$promise, $completion);
+      return i.e24($this$promise, $completion);
     };
     l.$arity = 1;
     return l;
@@ -653,21 +692,21 @@
     };
   }
   function Core$inputs$lambda(it) {
-    return Core.getInput(it.l24_1);
+    return Core.getInput(it.t24_1);
   }
   function Core$group$lambda$slambda($contents, this$0, resultContinuation) {
-    this.u24_1 = $contents;
-    this.v24_1 = this$0;
+    this.c25_1 = $contents;
+    this.d25_1 = this$0;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(Core$group$lambda$slambda).w23 = function ($this$promise, $completion) {
-    var tmp = this.x23($this$promise, $completion);
+  protoOf(Core$group$lambda$slambda).e24 = function ($this$promise, $completion) {
+    var tmp = this.f24($this$promise, $completion);
     tmp.j8_1 = Unit_instance;
     tmp.k8_1 = null;
     return tmp.p8();
   };
   protoOf(Core$group$lambda$slambda).z8 = function (p1, $completion) {
-    return this.w23((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+    return this.e24((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
   protoOf(Core$group$lambda$slambda).p8 = function () {
     var suspendResult = this.j8_1;
@@ -678,7 +717,7 @@
           case 0:
             this.i8_1 = 2;
             this.h8_1 = 1;
-            suspendResult = this.u24_1(this.v24_1, this);
+            suspendResult = this.c25_1(this.d25_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -700,15 +739,15 @@
       }
      while (true);
   };
-  protoOf(Core$group$lambda$slambda).x23 = function ($this$promise, completion) {
-    var i = new Core$group$lambda$slambda(this.u24_1, this.v24_1, completion);
-    i.w24_1 = $this$promise;
+  protoOf(Core$group$lambda$slambda).f24 = function ($this$promise, completion) {
+    var i = new Core$group$lambda$slambda(this.c25_1, this.d25_1, completion);
+    i.e25_1 = $this$promise;
     return i;
   };
   function Core$group$lambda$slambda_0($contents, this$0, resultContinuation) {
     var i = new Core$group$lambda$slambda($contents, this$0, resultContinuation);
     var l = function ($this$promise, $completion) {
-      return i.w23($this$promise, $completion);
+      return i.e24($this$promise, $completion);
     };
     l.$arity = 1;
     return l;
@@ -722,9 +761,9 @@
   function Core_0() {
     var tmp = this;
     var tmp_0 = Companion_instance_4;
-    tmp.b21_1 = tmp_0.x24(Core$inputs$lambda);
+    tmp.b21_1 = tmp_0.f25(Core$inputs$lambda);
   }
-  protoOf(Core_0).y24 = function (main, post, $completion) {
+  protoOf(Core_0).g25 = function (main, post, $completion) {
     var tmp = actionsToolkit;
     var tmp_0 = Core$run$lambda(main, this);
     var tmp_1;
@@ -749,16 +788,16 @@
   };
   protoOf(Core_0).c21 = function (main, post, $completion, $super) {
     post = post === VOID ? null : post;
-    return $super === VOID ? this.y24(main, post, $completion) : $super.y24.call(this, main, post, $completion);
+    return $super === VOID ? this.g25(main, post, $completion) : $super.g25.call(this, main, post, $completion);
   };
-  protoOf(Core_0).k23 = function (name, contents, $completion) {
+  protoOf(Core_0).s23 = function (name, contents, $completion) {
     var tmp = Core;
     return await_0(tmp.group(name, Core$group$lambda(contents, this)), $completion);
   };
-  protoOf(Core_0).j23 = function (name, value) {
-    return Core.setOutput(name.b25_1, value);
+  protoOf(Core_0).r23 = function (name, value) {
+    return Core.setOutput(name.j25_1, value);
   };
-  protoOf(Core_0).i23 = function (message) {
+  protoOf(Core_0).q23 = function (message) {
     return Core.setFailed(message);
   };
   protoOf(Core_0).y21 = function (message) {
@@ -767,7 +806,7 @@
   protoOf(Core_0).o21 = function (message) {
     return Core.warning(message);
   };
-  protoOf(Core_0).h23 = function (message) {
+  protoOf(Core_0).p23 = function (message) {
     return Core.error(message);
   };
   var InputName_IMAGE_ID_instance;
@@ -788,7 +827,7 @@
   }
   function InputName(name, ordinal, actionName) {
     Enum.call(this, name, ordinal);
-    this.l24_1 = actionName;
+    this.t24_1 = actionName;
   }
   function InputName_IMAGE_ID_getInstance() {
     InputName_initEntries();
@@ -818,12 +857,12 @@
   }
   function Companion() {
     Companion_instance = this;
-    this.c25_1 = InputName_IMAGE_ID_getInstance();
+    this.k25_1 = InputName_IMAGE_ID_getInstance();
   }
-  protoOf(Companion).d25 = function (getInput) {
-    return this.e25(getInput(this.c25_1));
+  protoOf(Companion).l25 = function (getInput) {
+    return this.m25(getInput(this.k25_1));
   };
-  protoOf(Companion).e25 = function (value) {
+  protoOf(Companion).m25 = function (value) {
     return _ImageId___init__impl__dvdkrh(value);
   };
   var Companion_instance;
@@ -846,18 +885,18 @@
   }
   function Companion_0() {
     Companion_instance_0 = this;
-    this.f25_1 = InputName_DESTINATION_HOSTS_getInstance();
+    this.n25_1 = InputName_DESTINATION_HOSTS_getInstance();
   }
-  protoOf(Companion_0).g25 = function (getInput) {
-    return this.h25(getInput(this.f25_1));
+  protoOf(Companion_0).o25 = function (getInput) {
+    return this.p25(getInput(this.n25_1));
   };
-  protoOf(Companion_0).h25 = function (value) {
-    var tmp1 = this.f25_1;
+  protoOf(Companion_0).p25 = function (value) {
+    var tmp1 = this.n25_1;
     var tmp$ret$3;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseYamlList' call
       var codeIndent = '    ';
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.l24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.l24_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.l24_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + '- baz\n        ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.t24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.t24_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.t24_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + '- baz\n        ';
       try {
         // Inline function 'kotlinx.serialization.decodeFromString' call
         var this_0 = Companion_getInstance().v1p_1;
@@ -904,18 +943,18 @@
   }
   function Companion_1() {
     Companion_instance_1 = this;
-    this.i25_1 = InputName_DESTINATION_IMAGE_NAMES_getInstance();
+    this.q25_1 = InputName_DESTINATION_IMAGE_NAMES_getInstance();
   }
-  protoOf(Companion_1).j25 = function (getInput) {
-    return this.k25(getInput(this.i25_1));
+  protoOf(Companion_1).r25 = function (getInput) {
+    return this.s25(getInput(this.q25_1));
   };
-  protoOf(Companion_1).k25 = function (value) {
-    var tmp1 = this.i25_1;
+  protoOf(Companion_1).s25 = function (value) {
+    var tmp1 = this.q25_1;
     var tmp$ret$3;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseYamlList' call
       var codeIndent = '    ';
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.l24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.l24_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.l24_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + '- baz\n        ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.t24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.t24_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.t24_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + '- baz\n        ';
       try {
         // Inline function 'kotlinx.serialization.decodeFromString' call
         var this_0 = Companion_getInstance().v1p_1;
@@ -987,20 +1026,20 @@
   }
   function Companion_2() {
     Companion_instance_2 = this;
-    this.l25_1 = InputName_AUTO_TAGGING_getInstance();
+    this.t25_1 = InputName_AUTO_TAGGING_getInstance();
   }
-  protoOf(Companion_2).m25 = function (getInput) {
-    return this.n25(getInput(this.l25_1));
+  protoOf(Companion_2).u25 = function (getInput) {
+    return this.v25(getInput(this.t25_1));
   };
-  protoOf(Companion_2).n25 = function (value) {
-    var tmp1 = this.l25_1;
+  protoOf(Companion_2).v25 = function (value) {
+    var tmp1 = this.t25_1;
     var tmp$ret$4;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseEnumInput' call
       // Inline function 'kotlin.enumValues' call
       var tmp$ret$0 = values();
       var values_0 = toList(tmp$ret$0);
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.l24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.l24_1 + ': ' + value + '\n--- END  INPUT ---\n\nMake that the input is an enum of the type ' + getKClass(Strategy).w9() + ' e.g.,:\n\n' + tmp1.l24_1 + ': ' + toString_0(firstOrNull(values_0)) + '\n\nValid values are: ' + joinToString(values_0, ', ') + '\n        ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.t24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.t24_1 + ': ' + value + '\n--- END  INPUT ---\n\nMake that the input is an enum of the type ' + getKClass(Strategy).w9() + ' e.g.,:\n\n' + tmp1.t24_1 + ': ' + toString_0(firstOrNull(values_0)) + '\n\nValid values are: ' + joinToString(values_0, ', ') + '\n        ';
       try {
         // Inline function 'kotlin.text.uppercase' call
         // Inline function 'kotlin.js.asDynamic' call
@@ -1055,18 +1094,18 @@
   }
   function Companion_3() {
     Companion_instance_3 = this;
-    this.o25_1 = InputName_DESTINATION_TAGS_getInstance();
+    this.w25_1 = InputName_DESTINATION_TAGS_getInstance();
   }
-  protoOf(Companion_3).p25 = function (getInput) {
-    return this.q25(getInput(this.o25_1));
+  protoOf(Companion_3).x25 = function (getInput) {
+    return this.y25(getInput(this.w25_1));
   };
-  protoOf(Companion_3).q25 = function (value) {
-    var tmp1 = this.o25_1;
+  protoOf(Companion_3).y25 = function (value) {
+    var tmp1 = this.w25_1;
     var tmp$ret$3;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseYamlList' call
       var codeIndent = '    ';
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.l24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.l24_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.l24_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + '- baz\n        ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.t24_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.t24_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.t24_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + '- baz\n        ';
       try {
         // Inline function 'kotlinx.serialization.decodeFromString' call
         var this_0 = Companion_getInstance().v1p_1;
@@ -1107,29 +1146,29 @@
   }
   function Companion_4() {
   }
-  protoOf(Companion_4).x24 = function (getInput) {
-    return new Inputs(Companion_getInstance_0().d25(getInput), Companion_getInstance_1().g25(getInput), Companion_getInstance_2().j25(getInput), Companion_getInstance_3().m25(getInput), Companion_getInstance_4().p25(getInput));
+  protoOf(Companion_4).f25 = function (getInput) {
+    return new Inputs(Companion_getInstance_0().l25(getInput), Companion_getInstance_1().o25(getInput), Companion_getInstance_2().r25(getInput), Companion_getInstance_3().u25(getInput), Companion_getInstance_4().x25(getInput));
   };
   var Companion_instance_4;
   function Companion_getInstance_5() {
     return Companion_instance_4;
   }
   function Inputs(imageId, destinationHosts, destinationImageNames, autoTagging, destinationTags) {
-    this.c23_1 = imageId;
-    this.d23_1 = destinationHosts;
-    this.e23_1 = destinationImageNames;
-    this.f23_1 = autoTagging;
-    this.g23_1 = destinationTags;
+    this.k23_1 = imageId;
+    this.l23_1 = destinationHosts;
+    this.m23_1 = destinationImageNames;
+    this.n23_1 = autoTagging;
+    this.o23_1 = destinationTags;
   }
   protoOf(Inputs).toString = function () {
-    return 'Inputs(imageId=' + ImageId__toString_impl_z02tf9(this.c23_1) + ', destinationHosts=' + DestinationHosts__toString_impl_pd5pt0(this.d23_1) + ', destinationImageNames=' + DestinationImageNames__toString_impl_n7y8h2(this.e23_1) + ', autoTagging=' + AutoTagging__toString_impl_i8zzqd(this.f23_1) + ', destinationTags=' + DestinationTags__toString_impl_dgmv46(this.g23_1) + ')';
+    return 'Inputs(imageId=' + ImageId__toString_impl_z02tf9(this.k23_1) + ', destinationHosts=' + DestinationHosts__toString_impl_pd5pt0(this.l23_1) + ', destinationImageNames=' + DestinationImageNames__toString_impl_n7y8h2(this.m23_1) + ', autoTagging=' + AutoTagging__toString_impl_i8zzqd(this.n23_1) + ', destinationTags=' + DestinationTags__toString_impl_dgmv46(this.o23_1) + ')';
   };
   protoOf(Inputs).hashCode = function () {
-    var result = ImageId__hashCode_impl_e9vbr0(this.c23_1);
-    result = imul(result, 31) + DestinationHosts__hashCode_impl_3lzt05(this.d23_1) | 0;
-    result = imul(result, 31) + DestinationImageNames__hashCode_impl_1gsbo7(this.e23_1) | 0;
-    result = imul(result, 31) + AutoTagging__hashCode_impl_v0y5fw(this.f23_1) | 0;
-    result = imul(result, 31) + DestinationTags__hashCode_impl_z7srx1(this.g23_1) | 0;
+    var result = ImageId__hashCode_impl_e9vbr0(this.k23_1);
+    result = imul(result, 31) + DestinationHosts__hashCode_impl_3lzt05(this.l23_1) | 0;
+    result = imul(result, 31) + DestinationImageNames__hashCode_impl_1gsbo7(this.m23_1) | 0;
+    result = imul(result, 31) + AutoTagging__hashCode_impl_v0y5fw(this.n23_1) | 0;
+    result = imul(result, 31) + DestinationTags__hashCode_impl_z7srx1(this.o23_1) | 0;
     return result;
   };
   protoOf(Inputs).equals = function (other) {
@@ -1138,15 +1177,15 @@
     if (!(other instanceof Inputs))
       return false;
     var tmp0_other_with_cast = other instanceof Inputs ? other : THROW_CCE();
-    if (!(this.c23_1 === tmp0_other_with_cast.c23_1))
+    if (!(this.k23_1 === tmp0_other_with_cast.k23_1))
       return false;
-    if (!equals(this.d23_1, tmp0_other_with_cast.d23_1))
+    if (!equals(this.l23_1, tmp0_other_with_cast.l23_1))
       return false;
-    if (!equals(this.e23_1, tmp0_other_with_cast.e23_1))
+    if (!equals(this.m23_1, tmp0_other_with_cast.m23_1))
       return false;
-    if (!equals(this.f23_1, tmp0_other_with_cast.f23_1))
+    if (!equals(this.n23_1, tmp0_other_with_cast.n23_1))
       return false;
-    if (!equals(this.g23_1, tmp0_other_with_cast.g23_1))
+    if (!equals(this.o23_1, tmp0_other_with_cast.o23_1))
       return false;
     return true;
   };
@@ -1165,7 +1204,7 @@
   }
   function OutputName(name, ordinal, actionName) {
     Enum.call(this, name, ordinal);
-    this.b25_1 = actionName;
+    this.j25_1 = actionName;
   }
   function OutputName_DIGEST_getInstance() {
     OutputName_initEntries();
