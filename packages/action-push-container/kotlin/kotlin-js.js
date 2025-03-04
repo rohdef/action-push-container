@@ -12,7 +12,7 @@
   var iterator = kotlin_kotlin.$_$.i9;
   var CoroutineImpl = kotlin_kotlin.$_$.f7;
   var Unit_instance = kotlin_kotlin.$_$.y3;
-  var THROW_CCE = kotlin_kotlin.$_$.hb;
+  var THROW_CCE = kotlin_kotlin.$_$.ib;
   var SequenceScope = kotlin_kotlin.$_$.h9;
   var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.p6;
   var initMetadataForLambda = kotlin_kotlin.$_$.e8;

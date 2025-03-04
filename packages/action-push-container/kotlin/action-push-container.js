@@ -10,13 +10,13 @@
   var initMetadataForClass = kotlin_kotlin.$_$.a8;
   var VOID = kotlin_kotlin.$_$.f;
   var CoroutineImpl = kotlin_kotlin.$_$.f7;
-  var THROW_CCE = kotlin_kotlin.$_$.hb;
+  var THROW_CCE = kotlin_kotlin.$_$.ib;
   var await_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
   var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.p6;
-  var Exception = kotlin_kotlin.$_$.za;
+  var Exception = kotlin_kotlin.$_$.ab;
   var initMetadataForLambda = kotlin_kotlin.$_$.e8;
   var emptyList = kotlin_kotlin.$_$.i5;
-  var noWhenBranchMatchedException = kotlin_kotlin.$_$.ac;
+  var noWhenBranchMatchedException = kotlin_kotlin.$_$.bc;
   var plus = kotlin_kotlin.$_$.x5;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.k;
   var collectionSizeOrDefault = kotlin_kotlin.$_$.r4;
@@ -29,14 +29,15 @@
   var isInterface = kotlin_kotlin.$_$.o8;
   var GlobalScope_instance = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
   var promise = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.e;
-  var Enum = kotlin_kotlin.$_$.xa;
+  var Enum = kotlin_kotlin.$_$.ya;
   var initMetadataForCompanion = kotlin_kotlin.$_$.b8;
   var getStringHashCode = kotlin_kotlin.$_$.y7;
+  var prependIndent = kotlin_kotlin.$_$.aa;
   var Companion_getInstance = kotlin_com_charleskorn_kaml_kaml.$_$.b;
   var KtList = kotlin_kotlin.$_$.f4;
   var getKClass = kotlin_kotlin.$_$.e;
   var PrimitiveClasses_getInstance = kotlin_kotlin.$_$.o3;
-  var arrayOf = kotlin_kotlin.$_$.vb;
+  var arrayOf = kotlin_kotlin.$_$.wb;
   var createKType = kotlin_kotlin.$_$.b;
   var createInvariantKTypeProjection = kotlin_kotlin.$_$.a;
   var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m1;
@@ -44,11 +45,11 @@
   var IncorrectTypeException = kotlin_com_charleskorn_kaml_kaml.$_$.a;
   var toString = kotlin_kotlin.$_$.z8;
   var hashCode = kotlin_kotlin.$_$.z7;
-  var THROW_IAE = kotlin_kotlin.$_$.ib;
+  var THROW_IAE = kotlin_kotlin.$_$.jb;
   var toList = kotlin_kotlin.$_$.i6;
   var firstOrNull = kotlin_kotlin.$_$.l5;
-  var toString_0 = kotlin_kotlin.$_$.dc;
-  var IllegalArgumentException = kotlin_kotlin.$_$.ab;
+  var toString_0 = kotlin_kotlin.$_$.ec;
+  var IllegalArgumentException = kotlin_kotlin.$_$.bb;
   var equals = kotlin_kotlin.$_$.u7;
   var IllegalArgumentException_init_$Create$_0 = kotlin_kotlin.$_$.k1;
   //endregion
@@ -836,7 +837,8 @@
     var tmp$ret$3;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseYamlList' call
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + value + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.h23_1 + ': |\n    - foo\n    - bar\n    - baz\n        ';
+      var codeIndent = '    ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.h23_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.h23_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + ' - baz\n        ';
       try {
         // Inline function 'kotlinx.serialization.decodeFromString' call
         var this_0 = Companion_getInstance().t1o_1;
@@ -893,7 +895,8 @@
     var tmp$ret$3;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseYamlList' call
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + value + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.h23_1 + ': |\n    - foo\n    - bar\n    - baz\n        ';
+      var codeIndent = '    ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.h23_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.h23_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + ' - baz\n        ';
       try {
         // Inline function 'kotlinx.serialization.decodeFromString' call
         var this_0 = Companion_getInstance().t1o_1;
@@ -978,7 +981,7 @@
       // Inline function 'kotlin.enumValues' call
       var tmp$ret$0 = values();
       var values_0 = toList(tmp$ret$0);
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + value + '\n--- END  INPUT ---\n\nMake that the input is an enum of the type ' + getKClass(Strategy).q9() + ' e.g.,:\n\n' + tmp1.h23_1 + ': ' + toString_0(firstOrNull(values_0)) + '\n\nValid values are: ' + joinToString(values_0, ', ') + '\n        ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.h23_1 + ': ' + value + '\n--- END  INPUT ---\n\nMake that the input is an enum of the type ' + getKClass(Strategy).q9() + ' e.g.,:\n\n' + tmp1.h23_1 + ': ' + toString_0(firstOrNull(values_0)) + '\n\nValid values are: ' + joinToString(values_0, ', ') + '\n        ';
       try {
         // Inline function 'kotlin.text.uppercase' call
         // Inline function 'kotlin.js.asDynamic' call
@@ -1043,7 +1046,8 @@
     var tmp$ret$3;
     $l$block: {
       // Inline function 'dk.rohdef.actions.github.parseYamlList' call
-      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + value + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.h23_1 + ': |\n    - foo\n    - bar\n    - baz\n        ';
+      var codeIndent = '    ';
+      var defaultErrorContent = '\nAttempted to parse: ' + tmp1.h23_1 + '\n\nThe input was:\n--- BEGIN INPUT ---\n' + tmp1.h23_1 + ': |\n' + prependIndent(value, codeIndent) + '\n--- END  INPUT ---\n\nMake that the input is a string containing a yaml list of strings, e.g.,:\n\n' + tmp1.h23_1 + ': |\n' + codeIndent + '- foo\n' + codeIndent + '- bar\n' + codeIndent + ' - baz\n        ';
       try {
         // Inline function 'kotlinx.serialization.decodeFromString' call
         var this_0 = Companion_getInstance().t1o_1;

@@ -903,6 +903,18 @@ if (typeof String.prototype.startsWith === 'undefined') {
   function coerceAtMost(_this__u8e3s4, maximumValue) {
     return _this__u8e3s4 > maximumValue ? maximumValue : _this__u8e3s4;
   }
+  function joinToString_1(_this__u8e3s4, separator, prefix, postfix, limit, truncated, transform) {
+    separator = separator === VOID ? ', ' : separator;
+    prefix = prefix === VOID ? '' : prefix;
+    postfix = postfix === VOID ? '' : postfix;
+    limit = limit === VOID ? -1 : limit;
+    truncated = truncated === VOID ? '...' : truncated;
+    transform = transform === VOID ? null : transform;
+    return joinTo_1(_this__u8e3s4, StringBuilder_init_$Create$_0(), separator, prefix, postfix, limit, truncated, transform).toString();
+  }
+  function map(_this__u8e3s4, transform) {
+    return new TransformingSequence(_this__u8e3s4, transform);
+  }
   function toList_1(_this__u8e3s4) {
     var it = _this__u8e3s4.h();
     if (!it.i())
@@ -917,8 +929,32 @@ if (typeof String.prototype.startsWith === 'undefined') {
     }
     return dst;
   }
-  function map(_this__u8e3s4, transform) {
-    return new TransformingSequence(_this__u8e3s4, transform);
+  function joinTo_1(_this__u8e3s4, buffer, separator, prefix, postfix, limit, truncated, transform) {
+    separator = separator === VOID ? ', ' : separator;
+    prefix = prefix === VOID ? '' : prefix;
+    postfix = postfix === VOID ? '' : postfix;
+    limit = limit === VOID ? -1 : limit;
+    truncated = truncated === VOID ? '...' : truncated;
+    transform = transform === VOID ? null : transform;
+    buffer.f(prefix);
+    var count = 0;
+    var _iterator__ex2g4s = _this__u8e3s4.h();
+    $l$loop: while (_iterator__ex2g4s.i()) {
+      var element = _iterator__ex2g4s.j();
+      count = count + 1 | 0;
+      if (count > 1) {
+        buffer.f(separator);
+      }
+      if (limit < 0 || count <= limit) {
+        appendElement(buffer, element, transform);
+      } else
+        break $l$loop;
+    }
+    if (limit >= 0 && count > limit) {
+      buffer.f(truncated);
+    }
+    buffer.f(postfix);
+    return buffer;
   }
   function last_1(_this__u8e3s4) {
     // Inline function 'kotlin.text.isEmpty' call
@@ -8195,9 +8231,6 @@ if (typeof String.prototype.startsWith === 'undefined') {
   protoOf(SequenceBuilderIterator).h8 = function () {
     return EmptyCoroutineContext_getInstance();
   };
-  function emptySequence() {
-    return EmptySequence_instance;
-  }
   function TransformingSequence$iterator$1(this$0) {
     this.ke_1 = this$0;
     this.je_1 = this$0.le_1.h();
@@ -8215,6 +8248,9 @@ if (typeof String.prototype.startsWith === 'undefined') {
   protoOf(TransformingSequence).h = function () {
     return new TransformingSequence$iterator$1(this);
   };
+  function emptySequence() {
+    return EmptySequence_instance;
+  }
   function EmptySequence() {
   }
   protoOf(EmptySequence).h = function () {
@@ -9231,6 +9267,11 @@ if (typeof String.prototype.startsWith === 'undefined') {
   function trimIndent(_this__u8e3s4) {
     return replaceIndent(_this__u8e3s4, '');
   }
+  function prependIndent(_this__u8e3s4, indent) {
+    indent = indent === VOID ? '    ' : indent;
+    var tmp = lineSequence(_this__u8e3s4);
+    return joinToString_1(map(tmp, prependIndent$lambda(indent)), '\n');
+  }
   function replaceIndent(_this__u8e3s4, newIndent) {
     newIndent = newIndent === VOID ? '' : newIndent;
     var lines_0 = lines(_this__u8e3s4);
@@ -9427,6 +9468,17 @@ if (typeof String.prototype.startsWith === 'undefined') {
     }
     return joinTo_0(destination, StringBuilder_init_$Create$(tmp1), '\n').toString();
   }
+  function prependIndent$lambda($indent) {
+    return function (it) {
+      var tmp;
+      if (isBlank(it)) {
+        tmp = it.length < $indent.length ? $indent : it;
+      } else {
+        tmp = $indent + it;
+      }
+      return tmp;
+    };
+  }
   function getIndentFunction$lambda(line) {
     return line;
   }
@@ -9593,9 +9645,6 @@ if (typeof String.prototype.startsWith === 'undefined') {
   function get_lastIndex_1(_this__u8e3s4) {
     return charSequenceLength(_this__u8e3s4) - 1 | 0;
   }
-  function lines(_this__u8e3s4) {
-    return toList_1(lineSequence(_this__u8e3s4));
-  }
   function isBlank(_this__u8e3s4) {
     var tmp$ret$1;
     $l$block: {
@@ -9613,6 +9662,13 @@ if (typeof String.prototype.startsWith === 'undefined') {
       tmp$ret$1 = true;
     }
     return tmp$ret$1;
+  }
+  function lineSequence(_this__u8e3s4) {
+    // Inline function 'kotlin.sequences.Sequence' call
+    return new lineSequence$$inlined$Sequence$1(_this__u8e3s4);
+  }
+  function lines(_this__u8e3s4) {
+    return toList_1(lineSequence(_this__u8e3s4));
   }
   function padStart(_this__u8e3s4, length, padChar) {
     padChar = padChar === VOID ? _Char___init__impl__6a9atx(32) : padChar;
@@ -9649,10 +9705,63 @@ if (typeof String.prototype.startsWith === 'undefined') {
     }
     return tmp;
   }
-  function lineSequence(_this__u8e3s4) {
-    // Inline function 'kotlin.sequences.Sequence' call
-    return new lineSequence$$inlined$Sequence$1(_this__u8e3s4);
+  function State() {
+    this.ig_1 = 0;
+    this.jg_1 = 1;
+    this.kg_1 = 2;
   }
+  var State_instance;
+  function State_getInstance() {
+    return State_instance;
+  }
+  function LinesIterator(string) {
+    this.lg_1 = string;
+    this.mg_1 = 0;
+    this.ng_1 = 0;
+    this.og_1 = 0;
+    this.pg_1 = 0;
+  }
+  protoOf(LinesIterator).i = function () {
+    if (!(this.mg_1 === 0)) {
+      return this.mg_1 === 1;
+    }
+    if (this.pg_1 < 0) {
+      this.mg_1 = 2;
+      return false;
+    }
+    var _delimiterLength = -1;
+    var _delimiterStartIndex = charSequenceLength(this.lg_1);
+    var inductionVariable = this.ng_1;
+    var last = charSequenceLength(this.lg_1);
+    if (inductionVariable < last)
+      $l$loop: do {
+        var idx = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var c = charSequenceGet(this.lg_1, idx);
+        if (c === _Char___init__impl__6a9atx(10) || c === _Char___init__impl__6a9atx(13)) {
+          _delimiterLength = c === _Char___init__impl__6a9atx(13) && (idx + 1 | 0) < charSequenceLength(this.lg_1) && charSequenceGet(this.lg_1, idx + 1 | 0) === _Char___init__impl__6a9atx(10) ? 2 : 1;
+          _delimiterStartIndex = idx;
+          break $l$loop;
+        }
+      }
+       while (inductionVariable < last);
+    this.mg_1 = 1;
+    this.pg_1 = _delimiterLength;
+    this.og_1 = _delimiterStartIndex;
+    return true;
+  };
+  protoOf(LinesIterator).j = function () {
+    if (!this.i()) {
+      throw NoSuchElementException_init_$Create$();
+    }
+    this.mg_1 = 0;
+    var lastIndex = this.og_1;
+    var firstIndex = this.ng_1;
+    this.ng_1 = this.og_1 + this.pg_1 | 0;
+    // Inline function 'kotlin.text.substring' call
+    var this_0 = this.lg_1;
+    return toString_1(charSequenceSubSequence(this_0, firstIndex, lastIndex));
+  };
   function padStart_0(_this__u8e3s4, length, padChar) {
     padChar = padChar === VOID ? _Char___init__impl__6a9atx(32) : padChar;
     if (length < 0)
@@ -9718,63 +9827,6 @@ if (typeof String.prototype.startsWith === 'undefined') {
        while (!(index === last));
     return -1;
   }
-  function State() {
-    this.ig_1 = 0;
-    this.jg_1 = 1;
-    this.kg_1 = 2;
-  }
-  var State_instance;
-  function State_getInstance() {
-    return State_instance;
-  }
-  function LinesIterator(string) {
-    this.lg_1 = string;
-    this.mg_1 = 0;
-    this.ng_1 = 0;
-    this.og_1 = 0;
-    this.pg_1 = 0;
-  }
-  protoOf(LinesIterator).i = function () {
-    if (!(this.mg_1 === 0)) {
-      return this.mg_1 === 1;
-    }
-    if (this.pg_1 < 0) {
-      this.mg_1 = 2;
-      return false;
-    }
-    var _delimiterLength = -1;
-    var _delimiterStartIndex = charSequenceLength(this.lg_1);
-    var inductionVariable = this.ng_1;
-    var last = charSequenceLength(this.lg_1);
-    if (inductionVariable < last)
-      $l$loop: do {
-        var idx = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        var c = charSequenceGet(this.lg_1, idx);
-        if (c === _Char___init__impl__6a9atx(10) || c === _Char___init__impl__6a9atx(13)) {
-          _delimiterLength = c === _Char___init__impl__6a9atx(13) && (idx + 1 | 0) < charSequenceLength(this.lg_1) && charSequenceGet(this.lg_1, idx + 1 | 0) === _Char___init__impl__6a9atx(10) ? 2 : 1;
-          _delimiterStartIndex = idx;
-          break $l$loop;
-        }
-      }
-       while (inductionVariable < last);
-    this.mg_1 = 1;
-    this.pg_1 = _delimiterLength;
-    this.og_1 = _delimiterStartIndex;
-    return true;
-  };
-  protoOf(LinesIterator).j = function () {
-    if (!this.i()) {
-      throw NoSuchElementException_init_$Create$();
-    }
-    this.mg_1 = 0;
-    var lastIndex = this.og_1;
-    var firstIndex = this.ng_1;
-    this.ng_1 = this.og_1 + this.pg_1 | 0;
-    // Inline function 'kotlin.text.substring' call
-    var this_0 = this.lg_1;
-    return toString_1(charSequenceSubSequence(this_0, firstIndex, lastIndex));
-  };
   function regionMatchesImpl(_this__u8e3s4, thisOffset, other, otherOffset, length, ignoreCase) {
     if (otherOffset < 0 || thisOffset < 0 || thisOffset > (charSequenceLength(_this__u8e3s4) - length | 0) || otherOffset > (charSequenceLength(other) - length | 0)) {
       return false;
@@ -11821,64 +11873,65 @@ if (typeof String.prototype.startsWith === 'undefined') {
   _.$_$.x9 = isHighSurrogate;
   _.$_$.y9 = isLowSurrogate;
   _.$_$.z9 = lines;
-  _.$_$.aa = repeat;
-  _.$_$.ba = replace;
-  _.$_$.ca = singleOrNull;
-  _.$_$.da = startsWith;
-  _.$_$.ea = takeLast;
-  _.$_$.fa = take_0;
-  _.$_$.ga = toByte_0;
-  _.$_$.ha = toCharArray;
-  _.$_$.ia = toDouble;
-  _.$_$.ja = toInt;
-  _.$_$.ka = toInt_0;
-  _.$_$.la = toLong_1;
-  _.$_$.ma = toShort_0;
-  _.$_$.na = toString_3;
-  _.$_$.oa = trimEnd_0;
-  _.$_$.pa = trimIndent;
-  _.$_$.qa = trimMargin;
-  _.$_$.ra = trim;
-  _.$_$.sa = Duration;
-  _.$_$.ta = Uuid;
-  _.$_$.ua = Char;
-  _.$_$.va = Comparable;
-  _.$_$.wa = Comparator;
-  _.$_$.xa = Enum;
-  _.$_$.ya = Error_0;
-  _.$_$.za = Exception;
-  _.$_$.ab = IllegalArgumentException;
-  _.$_$.bb = IndexOutOfBoundsException;
-  _.$_$.cb = Long;
-  _.$_$.db = NumberFormatException;
-  _.$_$.eb = Pair;
-  _.$_$.fb = Result;
-  _.$_$.gb = RuntimeException;
-  _.$_$.hb = THROW_CCE;
-  _.$_$.ib = THROW_IAE;
-  _.$_$.jb = Triple;
-  _.$_$.kb = UByteArray;
-  _.$_$.lb = UByte;
-  _.$_$.mb = UIntArray;
-  _.$_$.nb = UInt;
-  _.$_$.ob = ULongArray;
-  _.$_$.pb = ULong;
-  _.$_$.qb = UShortArray;
-  _.$_$.rb = UShort;
-  _.$_$.sb = Unit;
-  _.$_$.tb = UnsupportedOperationException;
-  _.$_$.ub = addSuppressed;
-  _.$_$.vb = arrayOf;
-  _.$_$.wb = createFailure;
-  _.$_$.xb = ensureNotNull;
-  _.$_$.yb = lazy;
-  _.$_$.zb = lazy_0;
-  _.$_$.ac = noWhenBranchMatchedException;
-  _.$_$.bc = plus_2;
-  _.$_$.cc = throwUninitializedPropertyAccessException;
-  _.$_$.dc = toString_0;
-  _.$_$.ec = to;
-  _.$_$.fc = uintCompare;
+  _.$_$.aa = prependIndent;
+  _.$_$.ba = repeat;
+  _.$_$.ca = replace;
+  _.$_$.da = singleOrNull;
+  _.$_$.ea = startsWith;
+  _.$_$.fa = takeLast;
+  _.$_$.ga = take_0;
+  _.$_$.ha = toByte_0;
+  _.$_$.ia = toCharArray;
+  _.$_$.ja = toDouble;
+  _.$_$.ka = toInt;
+  _.$_$.la = toInt_0;
+  _.$_$.ma = toLong_1;
+  _.$_$.na = toShort_0;
+  _.$_$.oa = toString_3;
+  _.$_$.pa = trimEnd_0;
+  _.$_$.qa = trimIndent;
+  _.$_$.ra = trimMargin;
+  _.$_$.sa = trim;
+  _.$_$.ta = Duration;
+  _.$_$.ua = Uuid;
+  _.$_$.va = Char;
+  _.$_$.wa = Comparable;
+  _.$_$.xa = Comparator;
+  _.$_$.ya = Enum;
+  _.$_$.za = Error_0;
+  _.$_$.ab = Exception;
+  _.$_$.bb = IllegalArgumentException;
+  _.$_$.cb = IndexOutOfBoundsException;
+  _.$_$.db = Long;
+  _.$_$.eb = NumberFormatException;
+  _.$_$.fb = Pair;
+  _.$_$.gb = Result;
+  _.$_$.hb = RuntimeException;
+  _.$_$.ib = THROW_CCE;
+  _.$_$.jb = THROW_IAE;
+  _.$_$.kb = Triple;
+  _.$_$.lb = UByteArray;
+  _.$_$.mb = UByte;
+  _.$_$.nb = UIntArray;
+  _.$_$.ob = UInt;
+  _.$_$.pb = ULongArray;
+  _.$_$.qb = ULong;
+  _.$_$.rb = UShortArray;
+  _.$_$.sb = UShort;
+  _.$_$.tb = Unit;
+  _.$_$.ub = UnsupportedOperationException;
+  _.$_$.vb = addSuppressed;
+  _.$_$.wb = arrayOf;
+  _.$_$.xb = createFailure;
+  _.$_$.yb = ensureNotNull;
+  _.$_$.zb = lazy;
+  _.$_$.ac = lazy_0;
+  _.$_$.bc = noWhenBranchMatchedException;
+  _.$_$.cc = plus_2;
+  _.$_$.dc = throwUninitializedPropertyAccessException;
+  _.$_$.ec = toString_0;
+  _.$_$.fc = to;
+  _.$_$.gc = uintCompare;
   //endregion
   return _;
 }(module.exports));
